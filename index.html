@@ -35,12 +35,11 @@ abstract:
     <p class="Section"> CONFERENCES & PUBLICATIONS </p>
         <ol>
             <li style="font-size: 23px;">
-                Moon, I.T.*, <b>Ko, SK.*</b>, Kang, SH. et al. (2024). Augmented Reality in Cardiology: Enhancing Visualization and Precision. <i> Current Cardiovascular Risk Reports</i> . (<b>* contributed equally to this work.</b>)
+                Moon, I.T.*, <b>Ko, SK.*</b>, Kang, SH. et al. (2024). Augmented Reality in Cardiology: Enhancing Visualization and Precision. <i> Current Cardiovascular Risk Reports</i> . (<b>*contributed equally to this work.</b>)
                 <a href="https://link.springer.com/article/10.1007/s12170-024-00744-7"> [Paper]</a>
             </li>
 
             <li style="font-size: 23px;"> 
-                
                 <b> Sang-Kyun Ko </b> and Yung-Kyun Noh, (2023), Data Reconstruction Method for Learning to Censored
                 Survival Data, <i>Korean Artificial Intelligence Association Summer Conference, 2023 </i>, Poster-Presentation. 
                 <a href="https://aiassociation.kr/UploadData/Editor/Conference/202307/F9D6562478D64D029CC64FD967576DC3.pdf"> [Program book] </a>,
@@ -98,6 +97,17 @@ abstract:
                     <br>
                     <li style="font-size: 21px;">
                         <b style="font-size: 30px;">Contributions</b> <br>
+                        <ol>
+                            <li>
+                                To the best of our knowledge, the largest real-world data analysis on a Korean population.
+                            </li>
+                            <li>
+                                The first application of KAN to the 10-year ASCVD risk prediction task.
+                            </li>
+                            <li>
+                                A simple, interpretable risk prediction formula designed for clinical use, similar to conventional equation-based models.
+                            </li>
+                        </ol>
                     </li>
 
                     <br>
@@ -105,11 +115,33 @@ abstract:
                         <b style="font-size: 30px;">Challenges</b> <br>
                         <ol>
                             <li>
-                                The security policies of the National Health Insurance Service (NHIS) of South Korea are highly strict. 
+                                <b>Resource</b>: The security policies of the National Health Insurance Service (NHIS) of South Korea are highly strict. 
                                 Then, data access was only permitted within a designated analysis center provided by the institution, where computational resources were extremely limited.
+                            </li>
+                            <li>
+                                <b>Imbalance</b>: ASCVD events were highly imbalanced at a ratio of approximately 21:1, with a very low proportion of positive cases.
+                            </li>
+                            <li>
+                                <b>Evaluate</b>: After pruning the trained network, a simplified formula was extracted and its performance was evaluated.
                             </li>
                         </ol>
                     </li>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Solutions</b> <br>
+                        <ol>
+                            <li>
+                                <b>Resource</b>: Minimized hyperparameter tuning time by estimating appropriate network complexity through Exploratory Data Analysis.
+                                Modified parts of the official KAN code due to version mismatches in the required packages and analysis environment.
+                            </li>
+                            <li>
+                                <b>Imbalance</b>: Applied weighted loss for training and used both AUROC and AUPRC for evaluation. 
+                            </li>
+                            <li>
+                                <b>Evaluate:</b> Developed a pipeline to convert the symbolic formula extracted from the network into a Python function using SymPy package and evaluated its output on the test dataset.
+                            </li>
+                        </ol>
+                    </li>
+
                 </ul>
 
             </p>
@@ -117,21 +149,49 @@ abstract:
         
         <p class="SubSection"> 2. (In Progress) Video Frame Interpolation for Coronary Angiograms </p>
             <div style="display: flex; gap: 0; padding: 0; margin: 0;">
-                <img src="vfi.png" alt="AFKAN" style="width: 100%; height: auto%; display: block; margin: 0; padding: 0;">
+                <img src="vfi.png" alt="vfi" style="width: 100%; height: auto%; display: block; margin: 0; padding: 0;">
             </div>
-            Description
+            <p class="BodyText"> 
+                <ul style="padding-left: 40px">
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Abstract</b> <br>
+                        The ~~~...
+                    </li>
+                    <br>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Contributions</b> <br>
+                        <ol>
+                            <li>
+                                contents
+                            </li>
+                        </ol>
+                    </li>
+
+                    <br>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Challenges</b> <br>
+                        <ol>
+                            <li>
+                                contents
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+
+            </p>
+
 
         <p class="SubSection"> 3. (Completed) Data Reconstruction Method for Learning to Censored Survival Data </p>
-            Description
+            
 
-        <p class="SubSection"> 4. (Completed) Research on Assistive AI in Endoscopy </p>
-            Description
+        <p class="SubSection"> 4. (Completed) Assistive AI in Endoscopy </p>
+            
         
         <p class="SubSection"> 5. (Completed) Efficient Learning for Identifying Additional b-Jets in the \( t \bar{t} b \bar{b} \) Process </p>
-            Description
+            
 
-        <p class="SubSection"> 6. (Completed) An Object-Based Retrieval System Using YOLO </p>
-            Description
+        <p class="SubSection"> 6. (Completed) Object-Based Retrieval System using YOLO </p>
+            
         
 
     <hr>
