@@ -50,6 +50,11 @@
     <p class="Section"> CONFERENCES & PUBLICATIONS </p>
         <ol>
             <li style="font-size: 23px;">
+                (preprint) <b>Sang-Kyun, K.</b>, Si-Hyuck, K., Sun-Hwa, K., Hwi, K., Chang-Hwan, Y., Tae-Jin, Y., & In-Ho, C. (2025). Kolmogorov-Arnold Network for Atherosclerotic Cardiovascular Disease Risk Prediction. medRxiv, 2025-05.
+                <a href="https://www.medrxiv.org/content/10.1101/2025.05.25.25328329v1.full.pdf"> [Paper]</a>
+            </li>
+
+            <li style="font-size: 23px;">
                 Moon, I.T.*, <b>Ko, SK.*</b>, Kang, SH. et al. (2024). Augmented Reality in Cardiology: Enhancing Visualization and Precision. <i> Current Cardiovascular Risk Reports</i> . (<b>*contributed equally to this work.</b>)
                 <a href="https://link.springer.com/article/10.1007/s12170-024-00744-7"> [Paper]</a>
             </li>
@@ -190,6 +195,73 @@
             </p>
 
         <p class="SubSection"> 3. (Completed) Data Reconstruction Method for Learning to Censored Survival Data </p>
+        <div style="display: flex; gap: 0; padding: 0; margin: 0;">
+                <img src="survival_second.png" alt="KAN Equation" style="width: 50%; height: auto%; display: block; margin: 0; padding: 0;">
+                <img src="survival_first.png" alt="AFKAN" style="width: 50%; height: auto%; display: block; margin: 0; padding: 0;">
+        </div>
+
+        <p class="BodyText"> 
+                <ul style="padding-left: 40px">
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Abstract</b> <br>
+                        Classical machine learning struggles with right-censored data due to incomplete target values. 
+                        However, since censored data indicates survival beyond a known threshold, it can still inform comparisons with uncensored data—enabling use in evaluating the concordance index (c-index), a metric for survival time ordering. 
+                        This study proposes a novel method that reconstructs data into pairs, aligning with the c-index structure, and represents them as matrices for classification. 
+                        Our approach directly optimizes the c-index by intuitively leveraging censored data. 
+                        Evaluations on three real-world datasets show competitive performance with established survival analysis methods such as partial likelihood, rank-based approaches, and the Wasserstein metric, with no significant performance differences (t-test, p-value > 0.05). 
+                        Additionally, we observe improved performance as the proportion of censored data in training increases.
+                    </li>
+                    <br>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Contributions</b> <br>
+                        <ol>
+                            <li>
+                                A novel matrix-based data reconstruction method to directly optimize the concordance index (c-index) using right-censored survival data.
+                            </li>
+                            <li>
+                                Reformulation of the survival analysis task from a regression to a classification problem, enabling effective use of incomplete target labels.
+                            </li>
+                            <li>
+                                Empirical demonstration of competitive performance across three real-world survival datasets (SUPPORT2, AIDS3, COLON DEATH), showing no statistically significant difference from state-of-the-art methods (t-test, p > 0.05).
+                            </li>
+                            <li>
+                                Verification of the utility of censored data through experiments that progressively increase the ratio of censored observations in the training set.
+                            </li>
+                        </ol>
+                    </li>
+
+                    <br>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Challenges</b> <br>
+                        <ol>
+                            <li>
+                                Right-censored data do not provide complete survival times, limiting their use in standard supervised learning.
+                            </li>
+                            <li>
+                                The original c-index is a discrete and non-differentiable metric, complicating gradient-based optimization.
+                            </li>
+                            <li>
+                                Reconstructing all acceptable pairs into matrix form leads to exponential growth in training data size, which can become a bottleneck with larger datasets.
+                            </li>
+                        </ol>
+                    </li>
+                    <li style="font-size: 21px;">
+                        <b style="font-size: 30px;">Solutions</b> <br>
+                        <ol>
+                            <li>
+                                Instead of discarding censored data, they were included by forming “acceptable pairs” based on their minimum known survival threshold and using them in the c-index. Introduced a rule-based mechanism for generating training matrices from acceptable data pairs, including handling equal survival times.
+                            </li>
+                            <li>
+                                Derived a surrogate, differentiable version of the matrix c-index and proposed a new loss function that enables gradient descent training in neural networks.
+                            </li>
+                            <li>
+                                Leveraged large mini-batch sizes and GPU-based optimization to handle exponential data growth from pairwise reconstruction.
+                        </ol>
+                    </li>
+
+                </ul>
+
+            </p>
             
 
         <p class="SubSection"> 4. (Completed) Assistive AI in Endoscopy </p>
