@@ -6,6 +6,7 @@
     --border-color: #30363d;
     --text-primary: #c9d1d9;
     --text-secondary: #8b949e;
+    --heading-color: #ffffff;
     --accent-color: #58a6ff;
     --accent-hover: #79c0ff;
     --link-color: #58a6ff;
@@ -17,6 +18,19 @@
 
     --transition-fast: 0.15s ease-in-out;
     --transition-slow: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --surface-color: #f6f8fa;
+    --border-color: #d0d7de;
+    --text-primary: #1f2328;
+    --text-secondary: #57606a;
+    --heading-color: #0d1117;
+    --accent-color: #0969da;
+    --accent-hover: #1f6feb;
+    --link-color: #0969da;
+    --shadow-color: rgba(140, 149, 159, 0.25);
 }
 
 * {
@@ -139,7 +153,7 @@ a:hover {
 .hero-content h1 {
     font-size: 2.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 8px;
     letter-spacing: -0.02em;
 }
@@ -180,7 +194,7 @@ a:hover {
 
 .hero-link:hover {
     background-color: var(--border-color);
-    color: #ffffff;
+    color: var(--heading-color);
     text-decoration: none;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px var(--shadow-color);
@@ -203,7 +217,7 @@ section {
 .section-title {
     font-size: 1.75rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 32px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 12px;
@@ -250,13 +264,13 @@ section {
 }
 
 .pub-authors b {
-    color: #ffffff;
+    color: var(--heading-color);
 }
 
 .pub-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 8px;
     line-height: 1.4;
 }
@@ -321,7 +335,7 @@ section {
 
 .tech-category h3 {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 16px;
     display: flex;
     align-items: center;
@@ -368,7 +382,7 @@ section {
 .project-title {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 12px;
 }
 
@@ -443,7 +457,7 @@ section {
 
 .project-section h4 {
     font-size: 1.1rem;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -482,7 +496,7 @@ section {
 
 .sub-project-title {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: var(--heading-color);
     margin-bottom: 16px;
 }
 
@@ -499,4 +513,98 @@ footer {
 /* MathJax container */
 .mjx-chtml {
     font-size: 100% !important;
+}
+
+/* Floating toggle bar (theme + language) */
+.toggle-bar {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 8px;
+    z-index: 1000;
+}
+
+.toggle-pill {
+    display: inline-flex;
+    align-items: center;
+    height: 36px;
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    transition: background-color var(--transition-fast),
+        border-color var(--transition-fast);
+}
+
+.toggle-pill .toggle-icon {
+    color: var(--text-secondary);
+    padding: 0 8px 0 12px;
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+
+.toggle-half {
+    background: transparent;
+    border: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    height: 100%;
+    min-width: 36px;
+    padding: 0 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.toggle-half:hover {
+    color: var(--heading-color);
+}
+
+.toggle-half.active {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+.toggle-half.active:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 480px) {
+    .toggle-bar {
+        top: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    .toggle-pill {
+        height: 32px;
+    }
+
+    .toggle-half {
+        padding: 0 10px;
+        min-width: 32px;
+        font-size: 0.8rem;
+    }
+
+    .toggle-pill .toggle-icon {
+        padding: 0 6px 0 10px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Language visibility */
+body:not(.lang-kr-mode) .lang-kr {
+    display: none !important;
+}
+
+body.lang-kr-mode .lang-en {
+    display: none !important;
 }

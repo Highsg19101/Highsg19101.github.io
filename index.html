@@ -6,6 +6,22 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
+<!-- Floating toggle bar: theme (moon/sun) + language (globe + EN/KR) -->
+<div class="toggle-bar" role="toolbar" aria-label="Site preferences">
+    <div class="toggle-pill theme-toggle" role="group" aria-label="Theme">
+        <button type="button" class="toggle-half active" data-theme="dark" aria-label="Dark mode">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+        <button type="button" class="toggle-half" data-theme="light" aria-label="Light mode">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+    </div>
+    <div class="toggle-pill lang-toggle" role="group" aria-label="Language">
+        <button type="button" class="toggle-half active" data-lang="en" aria-label="English">EN</button>
+        <button type="button" class="toggle-half" data-lang="kr" aria-label="Korean">KR</button>
+    </div>
+</div>
+
 <div class="container animate-fade-in">
 
     <!-- HERO SECTION -->
@@ -14,15 +30,20 @@
             <img src="IMG_5617.jpg" alt="Sang-Kyun Ko" class="hero-img">
         </div>
         <div class="hero-content delay-2 animate-fade-in">
-            <h1>Sang-Kyun Ko</h1>
-            <h2>Machine Learning Engineer @ Cardiovascular Center of SNUBH</h2>
+            <h1><span class="lang-en">Sang-Kyun Ko</span><span class="lang-kr">고상균</span></h1>
+            <h2>
+                <span class="lang-en">Machine Learning Engineer @ Cardiovascular Center of SNUBH</span>
+                <span class="lang-kr">Machine Learning Engineer @ 분당서울대학교병원 심혈관센터</span>
+            </h2>
 
             <div class="hero-links">
                 <a href="mailto:highsg19101@gmail.com" class="hero-link">
-                    <i class="fa-solid fa-envelope"></i> Email
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="lang-en">Email</span><span class="lang-kr">이메일</span>
                 </a>
                 <a href="https://highsg19101.github.io/Sang_Kyun_Ko_CV.pdf" class="hero-link" target="_blank">
-                    <i class="fa-solid fa-file-pdf"></i> Curriculum Vitae
+                    <i class="fa-solid fa-file-pdf"></i>
+                    <span class="lang-en">Curriculum Vitae</span><span class="lang-kr">Curriculum Vitae</span>
                 </a>
                 <a href="https://scholar.google.com/citations?hl=ko&user=2t1cBEoAAAAJ&view_op=list_works&sortby=pubdate"
                     class="hero-link" target="_blank">
@@ -34,53 +55,82 @@
             </div>
 
             <div style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;">
-                M.S. Computer Science (<a href="http://aais.hanyang.ac.kr" target="_blank">aAIs Lab.</a>) &bull;
-                B.S. Computer Science (<a href="https://sites.google.com/view/cbnu-ssrlab/home" target="_blank">SSR
-                    Lab.</a>) &bull;
-                South Korea
+                <span class="lang-en">
+                    M.S. Computer Science (<a href="http://aais.hanyang.ac.kr" target="_blank">aAIs Lab.</a>) &bull;
+                    B.S. Computer Science (<a href="https://sites.google.com/view/cbnu-ssrlab/home" target="_blank">SSR
+                        Lab.</a>) &bull;
+                    South Korea
+                </span>
+                <span class="lang-kr">
+                    M.S. Computer Science (<a href="http://aais.hanyang.ac.kr" target="_blank">aAIs Lab.</a>) &bull;
+                    B.S. Computer Science (<a href="https://sites.google.com/view/cbnu-ssrlab/home" target="_blank">SSR
+                        Lab.</a>) &bull;
+                    대한민국
+                </span>
             </div>
 
             <p class="bio-text">
-                I am a machine learning engineer on the AI team at the Cardiovascular Center of Seoul National University Bundang Hospital, 
-                working closely with cardiologist Prof. Kang. 
-                I earned my M.S. at Hanyang University, where I conducted research in the Advanced Application for Intelligence Systems Laboratory. 
-                Under the guidance of Professor Yung-kyun Noh, I studied deep learning theory and explored novel learning approaches. 
-                My <a href="https://highsg19101.github.io/Sang-Kyun Ko Thesis for MS.pdf" target="_blank">thesis</a> proposes novel learning methods
-                 for handling censored data in survival analysis, along with a new objective function designed to directly optimize classification metrics in
-                particle physics. Currently, I focus on developing practical AI solutions for clinical applications.
+                <span class="lang-en">
+                    I am a machine learning engineer on the AI team at the Cardiovascular Center of Seoul National University Bundang Hospital,
+                    working closely with cardiologist Prof. Kang.
+                    I earned my M.S. at Hanyang University, where I conducted research in the Advanced Application for Intelligence Systems Laboratory.
+                    Under the guidance of Professor Yung-kyun Noh, I studied deep learning theory and explored novel learning approaches.
+                    My <a href="https://highsg19101.github.io/Sang-Kyun Ko Thesis for MS.pdf" target="_blank">thesis</a> proposes novel learning methods
+                     for handling censored data in survival analysis, along with a new objective function designed to directly optimize classification metrics in
+                    particle physics. Currently, I am researching diffusion- and flow-based generative models that can be applied in real clinical practice.
+                </span>
+                <span class="lang-kr">
+                    저는 분당서울대학교병원 심혈관센터 AI팀의 machine learning engineer로, 심장내과 강시혁 교수님과 긴밀히 협력하며 연구를 수행하고 있습니다.
+                    한양대학교에서 M.S.를 취득하였고, 그곳에서 Advanced Application for Intelligence Systems Laboratory 소속으로 연구를 진행했습니다.
+                    노영균 교수님의 지도 아래 딥러닝 이론을 공부하고 새로운 학습의 접근 방식을 탐구했습니다.
+                    저의 <a href="https://highsg19101.github.io/Sang-Kyun Ko Thesis for MS.pdf" target="_blank">석사학위 논문</a>에서는 survival analysis의
+                    censored data를 다루기 위한 새로운 learning method와, particle physics의 특정 평가 지표를 directly optimize하기 위한
+                    새로운 objective function을 제안했습니다. 현재는 실제 임상에서 활용할 수 있는 diffusion과 flow기반 생성 모델을 연구하고 있습니다.
+                </span>
             </p>
         </div>
     </header>
 
     <!-- PUBLICATIONS SECTION -->
     <section class="delay-3 animate-fade-in">
-        <h2 class="section-title">Conferences & Publications</h2>
+        <h2 class="section-title">
+            <span class="lang-en">Conferences &amp; Publications</span>
+            <span class="lang-kr">학회 및 논문</span>
+        </h2>
         <div class="pub-list">
 
             <!-- Pub 1 -->
             <div class="pub-card">
                 <div class="pub-authors"><b>Sang-Kyun, K.</b>, Si-Hyuck, K., Sun-Hwa, K., Hwi, K., Chang-Hwan, Y.,
-                    Tae-Jin, Y., & In-Ho, C.</div>
+                    Tae-Jin, Y., &amp; In-Ho, C.</div>
                 <div class="pub-title">(preprint) Kolmogorov-Arnold Network for Atherosclerotic Cardiovascular Disease
                     Risk
                     Prediction</div>
                 <div class="pub-venue">medRxiv, 2025-05</div>
                 <div class="pub-links">
                     <a href="https://www.medrxiv.org/content/10.1101/2025.05.25.25328329v1.full.pdf" class="pub-tag"
-                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i> Paper</a>
+                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Paper</span><span class="lang-kr">논문</span>
+                    </a>
                     <a href="https://highsg19101.github.io/kan_ascvd_calc/" class="pub-tag" target="_blank"><i
-                            class="fa-solid fa-link" style="margin-right: 5px;"></i> Project Page</a>
+                            class="fa-solid fa-link" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Project Page</span><span class="lang-kr">프로젝트 페이지</span>
+                    </a>
                 </div>
             </div>
 
             <!-- Pub 2 -->
             <div class="pub-card">
-                <div class="pub-authors">Moon, I.T.*, <b>Ko, SK.*</b>, Kang, SH. et al. (*contributed equally)</div>
+                <div class="pub-authors">Moon, I.T.*, <b>Ko, SK.*</b>, Kang, SH. et al.
+                    <span class="lang-en">(*contributed equally)</span><span class="lang-kr">(*동등 기여)</span>
+                </div>
                 <div class="pub-title">Augmented Reality in Cardiology: Enhancing Visualization and Precision</div>
                 <div class="pub-venue">Current Cardiovascular Risk Reports, 2024</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1007/s12170-024-00744-7" class="pub-tag"
-                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i> Paper</a>
+                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Paper</span><span class="lang-kr">논문</span>
+                    </a>
                 </div>
             </div>
 
@@ -91,13 +141,18 @@
                 <div class="pub-venue">Korean Artificial Intelligence Association Summer Conference, 2023</div>
                 <div class="pub-links">
                     <a href="https://highsg19101.github.io/CKAIA2023_paper_17-2.pdf" class="pub-tag" target="_blank"><i
-                            class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i> Paper</a>
+                            class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Paper</span><span class="lang-kr">논문</span>
+                    </a>
                     <a href="https://highsg19101.github.io/80_140_CKAIA2023_Data_Reconstruction.pdf"
                         class="pub-tag poster" target="_blank"><i class="fa-solid fa-image"
-                            style="margin-right: 5px;"></i> Poster</a>
+                            style="margin-right: 5px;"></i>
+                        <span class="lang-en">Poster</span><span class="lang-kr">포스터</span>
+                    </a>
                     <a href="https://aiassociation.kr/UploadData/Editor/Conference/202307/F9D6562478D64D029CC64FD967576DC3.pdf"
                         class="pub-tag" target="_blank"><i class="fa-solid fa-book" style="margin-right: 5px;"></i>
-                        Program Book</a>
+                        <span class="lang-en">Program Book</span><span class="lang-kr">프로그램북</span>
+                    </a>
                 </div>
             </div>
 
@@ -110,7 +165,9 @@
                 <div class="pub-links">
                     <a href="https://www.nxtbook.com/ueg/UEG/ueg-journal-abstracts-2023/index.php#/p/666"
                         class="pub-tag poster" target="_blank"><i class="fa-solid fa-image"
-                            style="margin-right: 5px;"></i> Abstract Poster</a>
+                            style="margin-right: 5px;"></i>
+                        <span class="lang-en">Abstract Poster</span><span class="lang-kr">초록 포스터</span>
+                    </a>
                 </div>
             </div>
 
@@ -122,7 +179,9 @@
                 <div class="pub-venue">The European Physical Journal Plus, 2022</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/article/10.1140/epjp/s13360-022-03024-8" class="pub-tag"
-                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i> Paper</a>
+                        target="_blank"><i class="fa-solid fa-file-pdf" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Paper</span><span class="lang-kr">논문</span>
+                    </a>
                 </div>
             </div>
 
@@ -134,8 +193,9 @@
                     Applications (CUTE 2018)</div>
                 <div class="pub-links">
                     <a href="https://link.springer.com/chapter/10.1007/978-981-13-9341-9_87" class="pub-tag"
-                        target="_blank"><i class="fa-solid fa-book" style="margin-right: 5px;"></i> Conference
-                        Proceedings</a>
+                        target="_blank"><i class="fa-solid fa-book" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Conference Proceedings</span><span class="lang-kr">학회 발표집</span>
+                    </a>
                 </div>
             </div>
 
@@ -155,8 +215,9 @@
                 <div class="pub-venue">Proceedings of the KIISE Conference, 2017</div>
                 <div class="pub-links">
                     <a href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE07322658" class="pub-tag"
-                        target="_blank"><i class="fa-solid fa-book" style="margin-right: 5px;"></i> Conference
-                        Proceedings</a>
+                        target="_blank"><i class="fa-solid fa-book" style="margin-right: 5px;"></i>
+                        <span class="lang-en">Conference Proceedings</span><span class="lang-kr">학회 발표집</span>
+                    </a>
                 </div>
             </div>
 
@@ -165,14 +226,22 @@
 
     <!-- PROJECTS SECTION -->
     <section class="delay-5 animate-fade-in">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">
+            <span class="lang-en">Projects</span><span class="lang-kr">프로젝트</span>
+        </h2>
 
         <!-- Project 1 -->
         <article class="project-card">
             <div class="project-header">
-                <h3 class="project-title">1. Video Frame Interpolation for Coronary Angiograms</h3>
+                <h3 class="project-title">
+                    <span class="lang-en">1. Video Frame Interpolation for Coronary Angiograms</span>
+                    <span class="lang-kr">1. 관상동맥 조영영상의 Video Frame Interpolation</span>
+                </h3>
                 <div class="project-meta">
-                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i> Mar 2025 - In progress</span>
+                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                        <span class="lang-en">Mar 2025 - In progress</span>
+                        <span class="lang-kr">2025년 3월 - 진행 중</span>
+                    </span>
                 </div>
             </div>
             <div class="project-images">
@@ -180,18 +249,34 @@
             </div>
             <div class="project-content">
                 <p class="project-abstract">
-                    Lowering the frame rate of coronary angiography (e.g., from 15 to 7.5 FPS) significantly reduces
-                    radiation exposure but degrades temporal resolution. We introduce Angio-FILM, a novel generative AI
-                    model for video frame interpolation (VFI) dedicated to coronary angiography. Angio-FILM uses a
-                    latent flow matching model to synthesize high-temporal-resolution (15 FPS) videos from
-                    low-frame-rate (7.5 FPS) inputs. The model was trained on 377,000 videos and validated on both
-                    internal and external datasets.
+                    <span class="lang-en">
+                        Lowering the frame rate of coronary angiography (e.g., from 15 to 7.5 FPS) significantly reduces
+                        radiation exposure but degrades temporal resolution. We introduce Angio-FILM, a novel generative AI
+                        model for video frame interpolation (VFI) dedicated to coronary angiography. Angio-FILM uses a
+                        latent flow matching model to synthesize high-temporal-resolution (15 FPS) videos from
+                        low-frame-rate (7.5 FPS) inputs. The model was trained on 377,000 videos and validated on both
+                        internal and external datasets.
+                    </span>
+                    <span class="lang-kr">
+                        관상동맥 조영영상의 frame rate를 낮추면 (예를 들어 15 FPS에서 7.5 FPS로) 방사선 노출량이 크게 줄어드는 대신
+                        temporal resolution이 함께 저하됩니다. 본 연구에서는 관상동맥 조영영상에 특화된 새로운 generative AI 기반
+                        video frame interpolation (VFI) 모델인 Angio-FILM을 제안합니다. Angio-FILM은 latent flow matching model을
+                        활용하여 low-frame-rate (7.5 FPS) 입력으로부터 high-temporal-resolution (15 FPS) 영상을 합성합니다. 본 모델은
+                        377,000건의 영상으로 학습되었으며, 내부 및 외부 dataset 모두에서 검증되었습니다.
+                    </span>
                 </p>
                 <p class="project-abstract">
-                    On quantitative metrics and qualitative evaluation, Angio-FILM outperformed state-of-the-art VFI
-                    methods. Furthermore, Visual Turing test involving 30 physicians and 600 videos showed accuracies of
-                    54% in a single-video binary classification task, indicating that the generated videos were hardly
-                    distinguishable from real ones.
+                    <span class="lang-en">
+                        On quantitative metrics and qualitative evaluation, Angio-FILM outperformed state-of-the-art VFI
+                        methods. Furthermore, Visual Turing test involving 30 physicians and 600 videos showed accuracies of
+                        54% in a single-video binary classification task, indicating that the generated videos were hardly
+                        distinguishable from real ones.
+                    </span>
+                    <span class="lang-kr">
+                        정량적 지표와 정성적 평가 모두에서 Angio-FILM은 state-of-the-art VFI 방법들을 능가했습니다. 또한 30명의 임상의와
+                        600건의 영상을 대상으로 진행한 Visual Turing test에서 single-video binary classification task의 정확도가 54%로
+                        나타나, 생성된 영상이 실제 영상과 거의 구분되지 않음을 확인했습니다.
+                    </span>
                 </p>
             </div>
         </article>
@@ -199,11 +284,18 @@
         <!-- Project 2 -->
         <article class="project-card">
             <div class="project-header">
-                <h3 class="project-title">2. ASCVD Risk Prediction in Koreans using KAN</h3>
+                <h3 class="project-title">
+                    <span class="lang-en">2. ASCVD Risk Prediction in Koreans using KAN</span>
+                    <span class="lang-kr">2. KAN을 활용한 한국인 ASCVD Risk Prediction</span>
+                </h3>
                 <div class="project-meta">
-                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i> Jun 2024 - Under
-                        Review</span>
-                    <span class="project-meta-item"><i class="fa-solid fa-user"></i> First author</span>
+                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                        <span class="lang-en">Jun 2024 - Under Review</span>
+                        <span class="lang-kr">2024년 6월 - 심사 중</span>
+                    </span>
+                    <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                        <span class="lang-en">First author</span><span class="lang-kr">제1저자</span>
+                    </span>
                 </div>
             </div>
             <div class="project-images">
@@ -211,48 +303,96 @@
             </div>
             <div class="project-content">
                 <p class="project-abstract">
-                    Long-term prediction of individual atherosclerotic cardiovascular disease (ASCVD) risk remains a
-                    critical challenge in cardiology. We aim to develop a more accurate, and clinically applicable risk
-                    prediction model by leveraging the Kolmogorov-Arnold Network (KAN), which offers greater
-                    interpretability than MLP, to generate a simple and interpretable equation for ASCVD risk
-                    estimation.
+                    <span class="lang-en">
+                        Long-term prediction of individual atherosclerotic cardiovascular disease (ASCVD) risk remains a
+                        critical challenge in cardiology. We aim to develop a more accurate, and clinically applicable risk
+                        prediction model by leveraging the Kolmogorov-Arnold Network (KAN), which offers greater
+                        interpretability than MLP, to generate a simple and interpretable equation for ASCVD risk
+                        estimation.
+                    </span>
+                    <span class="lang-kr">
+                        개개인의 atherosclerotic cardiovascular disease (ASCVD) 위험을 long-term으로 예측하는 일은 cardiology 분야에서
+                        여전히 중요한 과제입니다. 본 연구에서는 MLP보다 높은 interpretability를 제공하는 Kolmogorov-Arnold Network (KAN)을
+                        활용하여, ASCVD 위험 추정을 위한 간결하고 해석 가능한 수식을 도출하고, 보다 정확하면서도 임상에서 활용 가능한
+                        risk prediction model을 개발하는 것을 목표로 합니다.
+                    </span>
                     <br><br>
                     \[ f^{\text{KAN}}(\mathbf{x}) = -a g_1(\mathrm{x}_{1}) + b g_2(\mathrm{x_{2}}) + c. \]
                 </p>
 
                 <div class="project-details">
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-star"></i> Contributions</h4>
+                        <h4><i class="fa-solid fa-star"></i>
+                            <span class="lang-en">Contributions</span><span class="lang-kr">기여한 점</span>
+                        </h4>
                         <ul class="project-list">
-                            <li>The largest real-world data analysis on a Korean population.</li>
-                            <li>The first application of KAN to the 10-year ASCVD risk prediction task.</li>
-                            <li>A simple, interpretable risk prediction formula designed for clinical use.</li>
+                            <li>
+                                <span class="lang-en">The largest real-world data analysis on a Korean population.</span>
+                                <span class="lang-kr">한국인 모집단을 대상으로 한 최대 규모의 real-world data 분석.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">The first application of KAN to the 10-year ASCVD risk prediction task.</span>
+                                <span class="lang-kr">KAN을 10-year ASCVD risk prediction task에 최초로 적용.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">A simple, interpretable risk prediction formula designed for clinical use.</span>
+                                <span class="lang-kr">임상 활용을 염두에 둔, 간결하고 해석 가능한 risk prediction 수식 도출.</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Challenges</h4>
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i>
+                            <span class="lang-en">Challenges</span><span class="lang-kr">어려움</span>
+                        </h4>
                         <ul class="project-list">
-                            <li><b>Resource</b>: The security policies of the National Health Insurance Service (NHIS)
+                            <li>
+                                <span class="lang-en"><b>Resource</b>: The security policies of the National Health Insurance Service (NHIS)
                                 of South Korea are highly strict. Then, data access was only permitted within a
                                 designated analysis center provided by the institution, where computational resources
-                                were extremely limited.</li>
-                            <li><b>Imbalance</b>: ASCVD events were highly imbalanced at a ratio of approximately 21:1,
-                                with a very low proportion of positive cases.</li>
-                            <li><b>Evaluate</b>: After pruning the trained network, a simplified formula was extracted
-                                and its performance was evaluated.</li>
+                                were extremely limited.</span>
+                                <span class="lang-kr"><b>Resource</b>: 국민건강보험공단(NHIS)의 보안 정책이 매우 엄격하여, 데이터 접근은
+                                기관에서 지정한 분석 센터 내에서만 가능했고, 해당 환경의 computational resource는 매우 제한적이었습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><b>Imbalance</b>: ASCVD events were highly imbalanced at a ratio of approximately 21:1,
+                                with a very low proportion of positive cases.</span>
+                                <span class="lang-kr"><b>Imbalance</b>: ASCVD event는 약 21:1 비율의 심한 불균형을 보였으며,
+                                positive case의 비중이 매우 낮았습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><b>Evaluate</b>: After pruning the trained network, a simplified formula was extracted
+                                and its performance was evaluated.</span>
+                                <span class="lang-kr"><b>Evaluate</b>: 학습된 네트워크를 pruning한 뒤 단순화된 수식을 추출하고,
+                                그 성능을 평가해야 했습니다.</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-lightbulb"></i> Solutions</h4>
+                        <h4><i class="fa-solid fa-lightbulb"></i>
+                            <span class="lang-en">Solutions</span><span class="lang-kr">해결 방안</span>
+                        </h4>
                         <ul class="project-list">
-                            <li><b>Resource</b>: Minimized hyperparameter tuning time by estimating appropriate network
+                            <li>
+                                <span class="lang-en"><b>Resource</b>: Minimized hyperparameter tuning time by estimating appropriate network
                                 complexity through Exploratory Data Analysis. Modified parts of the official KAN code
-                                due to version mismatches in the required packages and analysis environment.</li>
-                            <li><b>Imbalance</b>: Applied weighted loss for training and used both AUROC and AUPRC for
-                                evaluation.</li>
-                            <li><b>Evaluate</b>: Developed a pipeline to convert the symbolic formula extracted from the
+                                due to version mismatches in the required packages and analysis environment.</span>
+                                <span class="lang-kr"><b>Resource</b>: Exploratory Data Analysis를 통해 적절한 네트워크 complexity를
+                                추정하여 hyperparameter tuning 시간을 최소화했습니다. 또한 분석 환경과 필요한 패키지 버전이 맞지 않아
+                                공식 KAN 코드의 일부를 수정해 사용했습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><b>Imbalance</b>: Applied weighted loss for training and used both AUROC and AUPRC for
+                                evaluation.</span>
+                                <span class="lang-kr"><b>Imbalance</b>: 학습 시 weighted loss를 적용하고, 평가 지표로는 AUROC와 AUPRC를
+                                함께 사용했습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en"><b>Evaluate</b>: Developed a pipeline to convert the symbolic formula extracted from the
                                 network into a Python function using SymPy package and evaluated its output on the test
-                                dataset.</li>
+                                dataset.</span>
+                                <span class="lang-kr"><b>Evaluate</b>: 네트워크에서 추출한 symbolic 수식을 SymPy 패키지를 활용해
+                                Python 함수로 변환하는 pipeline을 구축하고, 그 출력을 test dataset에서 평가했습니다.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -262,10 +402,19 @@
         <!-- Project 3 -->
         <article class="project-card">
             <div class="project-header">
-                <h3 class="project-title">3. Data Reconstruction Method for Learning to Censored Survival Data</h3>
+                <h3 class="project-title">
+                    <span class="lang-en">3. Data Reconstruction Method for Learning to Censored Survival Data</span>
+                    <span class="lang-kr">3. Censored Survival Data 학습을 위한 Data Reconstruction Method</span>
+                </h3>
                 <div class="project-meta">
-                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i> Jul 2022 - Jul 2023</span>
-                    <span class="project-meta-item"><i class="fa-solid fa-user"></i> Project Lead, First author</span>
+                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                        <span class="lang-en">Jul 2022 - Jul 2023</span>
+                        <span class="lang-kr">2022년 7월 - 2023년 7월</span>
+                    </span>
+                    <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                        <span class="lang-en">Project Lead, First author</span>
+                        <span class="lang-kr">프로젝트 리드, 제1저자</span>
+                    </span>
                 </div>
             </div>
             <div class="project-images row">
@@ -276,44 +425,92 @@
             </div>
             <div class="project-content">
                 <p class="project-abstract">
-                    Classical machine learning models struggle with right-censored data in survival analysis due to
-                    incomplete target values. This study proposes a novel method that reconstructs data into pairs,
-                    aligning with the c-index structure, and represents them as matrices for classification. Our
-                    approach directly optimizes the c-index by intuitively leveraging censored data. Evaluations on
-                    real-world datasets show competitive performance with established methods.
+                    <span class="lang-en">
+                        Classical machine learning models struggle with right-censored data in survival analysis due to
+                        incomplete target values. This study proposes a novel method that reconstructs data into pairs,
+                        aligning with the c-index structure, and represents them as matrices for classification. Our
+                        approach directly optimizes the c-index by intuitively leveraging censored data. Evaluations on
+                        real-world datasets show competitive performance with established methods.
+                    </span>
+                    <span class="lang-kr">
+                        Survival analysis에서 right-censored data는 target 값이 불완전하여 기존의 machine learning 모델로 다루기
+                        어렵습니다. 본 연구에서는 데이터를 c-index의 구조에 맞춰 pair로 재구성하고, 이를 행렬 형태로 표현하여 classification
+                        문제로 풀어내는 새로운 방법을 제안합니다. 제안하는 접근은 censored data를 직관적으로 활용하여 c-index를 직접
+                        optimize합니다. 다양한 real-world dataset에 대한 실험을 통해 기존 방법들과 견줄만한 성능을 입증했습니다.
+                    </span>
                 </p>
 
                 <div class="project-details">
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-star"></i> Contributions</h4>
+                        <h4><i class="fa-solid fa-star"></i>
+                            <span class="lang-en">Contributions</span><span class="lang-kr">기여한 점</span>
+                        </h4>
                         <ul class="project-list">
-                            <li>Novel matrix-based data reconstruction method to optimize the c-index directly.</li>
-                            <li>Reformulation of survival analysis from regression to a classification problem.</li>
-                            <li>Competitive empirical performance across SUPPORT2, AIDS3, and COLON DEATH datasets.</li>
+                            <li>
+                                <span class="lang-en">Novel matrix-based data reconstruction method to optimize the c-index directly.</span>
+                                <span class="lang-kr">C-index를 직접 optimize하는 새로운 matrix 기반 data reconstruction method.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Reformulation of survival analysis from regression to a classification problem.</span>
+                                <span class="lang-kr">Survival analysis를 regression 문제에서 classification 문제로 재구성.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Competitive empirical performance across SUPPORT2, AIDS3, and COLON DEATH datasets.</span>
+                                <span class="lang-kr">SUPPORT2, AIDS3, COLON DEATH dataset 전반에서 기존 방법과 경쟁 가능한 empirical 성능 확보.</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-triangle-exclamation"></i> Challenges</h4>
+                        <h4><i class="fa-solid fa-triangle-exclamation"></i>
+                            <span class="lang-en">Challenges</span><span class="lang-kr">어려움</span>
+                        </h4>
                         <ul class="project-list">
-                            <li>Right-censored data do not provide complete survival times, limiting their use in
-                                standard supervised learning.</li>
-                            <li>The original c-index is a discrete and non-differentiable metric, complicating
-                                gradient-based optimization.</li>
-                            <li>Reconstructing all acceptable pairs into matrix form leads to exponential growth in
-                                training data size, which can become a bottleneck with larger datasets.</li>
+                            <li>
+                                <span class="lang-en">Right-censored data do not provide complete survival times, limiting their use in
+                                standard supervised learning.</span>
+                                <span class="lang-kr">Right-censored data는 완전한 survival time을 제공하지 않아 일반적인 supervised
+                                learning에서의 활용이 제한적입니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">The original c-index is a discrete and non-differentiable metric, complicating
+                                gradient-based optimization.</span>
+                                <span class="lang-kr">기존의 c-index는 이산적이고 미분이 불가능한 metric이어서 gradient 기반의
+                                optimization이 어렵습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Reconstructing all acceptable pairs into matrix form leads to exponential growth in
+                                training data size, which can become a bottleneck with larger datasets.</span>
+                                <span class="lang-kr">허용 가능한 모든 pair를 matrix 형태로 재구성할 경우 학습 데이터 크기가
+                                exponential하게 증가하여, 대규모 dataset에서는 병목이 될 수 있습니다.</span>
+                            </li>
                         </ul>
                     </div>
                     <div class="project-section">
-                        <h4><i class="fa-solid fa-lightbulb"></i> Solutions</h4>
+                        <h4><i class="fa-solid fa-lightbulb"></i>
+                            <span class="lang-en">Solutions</span><span class="lang-kr">해결 방안</span>
+                        </h4>
                         <ul class="project-list">
-                            <li>Instead of discarding censored data, they were included by forming "acceptable pairs"
+                            <li>
+                                <span class="lang-en">Instead of discarding censored data, they were included by forming "acceptable pairs"
                                 based on their minimum known survival threshold and using them in the c-index.
                                 Introduced a rule-based mechanism for generating training matrices from acceptable data
-                                pairs, including handling equal survival times.</li>
-                            <li>Derived a surrogate, differentiable version of the matrix c-index and proposed a new
-                                loss function that enables gradient descent training in neural networks.</li>
-                            <li>Leveraged large mini-batch sizes and GPU-based optimization to handle exponential data
-                                growth from pairwise reconstruction.</li>
+                                pairs, including handling equal survival times.</span>
+                                <span class="lang-kr">Censored data를 버리는 대신, 알려진 최소 survival 임계값을 기준으로 "acceptable pair"를
+                                구성하여 c-index 계산에 포함시켰습니다. 또한 동일한 survival time까지 고려하여 acceptable data pair로부터
+                                학습 행렬을 생성하는 rule-based 메커니즘을 도입했습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Derived a surrogate, differentiable version of the matrix c-index and proposed a new
+                                loss function that enables gradient descent training in neural networks.</span>
+                                <span class="lang-kr">행렬 형태의 c-index에 대한 미분 가능한 surrogate를 유도하고, neural network에서
+                                gradient descent 학습이 가능하도록 새로운 loss function을 제안했습니다.</span>
+                            </li>
+                            <li>
+                                <span class="lang-en">Leveraged large mini-batch sizes and GPU-based optimization to handle exponential data
+                                growth from pairwise reconstruction.</span>
+                                <span class="lang-kr">Pairwise reconstruction으로 인한 데이터의 기하급수적 증가를 다루기 위해 큰
+                                mini-batch size와 GPU 기반 optimization을 활용했습니다.</span>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -323,73 +520,120 @@
 <!-- Project 4 (Endoscopy AI) -->
 <article class="project-card">
     <div class="project-header">
-        <h3 class="project-title">4. Assistive AI in Endoscopy</h3>
+        <h3 class="project-title">
+            <span class="lang-en">4. Assistive AI in Endoscopy</span>
+            <span class="lang-kr">4. Endoscopy 보조 AI</span>
+        </h3>
         <div class="project-meta">
-            <span class="project-meta-item"><i class="fa-regular fa-calendar"></i> Apr 2022 - Jul 2023</span>
-            <span class="project-meta-item"><i class="fa-solid fa-users"></i> Team member
-                Dev</span>
+            <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                <span class="lang-en">Apr 2022 - Jul 2023</span>
+                <span class="lang-kr">2022년 4월 - 2023년 7월</span>
+            </span>
+            <span class="project-meta-item"><i class="fa-solid fa-users"></i>
+                <span class="lang-en">Team member Dev</span>
+                <span class="lang-kr">팀 멤버 개발자</span>
+            </span>
         </div>
     </div>
     <div class="project-content" style="padding-top: 24px;">
         <p class="project-abstract">
-            Early detection and accurate characterization of polyps during colonoscopy or gastroscopy are
-            essential for preventing gastrointestinal cancers. I carried out several sub-projects aimed at
-            assisting clinicians by improving lesion recognition rates and standardizing outcomes.
+            <span class="lang-en">
+                Early detection and accurate characterization of polyps during colonoscopy or gastroscopy are
+                essential for preventing gastrointestinal cancers. I carried out several sub-projects aimed at
+                assisting clinicians by improving lesion recognition rates and standardizing outcomes.
+            </span>
+            <span class="lang-kr">
+                Colonoscopy나 gastroscopy 중 polyp을 조기에 발견하고 정확히 특성화하는 것은 위장관 암 예방에 있어 필수적입니다.
+                본 프로젝트에서는 임상의의 lesion 인식률을 높이고 결과의 표준화를 돕기 위한 여러 sub-project를 수행했습니다.
+            </span>
         </p>
 
         <div class="project-details">
             <!-- Sub 1 -->
             <div class="project-section">
-                <h4><i class="fa-solid fa-microscope"></i> Synthetic Colonoscopy Images</h4>
+                <h4><i class="fa-solid fa-microscope"></i>
+                    <span class="lang-en">Synthetic Colonoscopy Images</span>
+                    <span class="lang-kr">Synthetic Colonoscopy 영상</span>
+                </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig1.png" alt="Synthetic Colonoscopy Images" class="project-image"
                         style="width: 100%; height: 200px; object-fit: contain; object-position: left;">
                 </div>
                 <ul class="project-list">
-                    <li>Generated augmented training datasets to support further studies of real-time polyp detectors.
+                    <li>
+                        <span class="lang-en">Generated augmented training datasets to support further studies of real-time polyp detectors.</span>
+                        <span class="lang-kr">실시간 polyp detector 연구를 지원하기 위한 augmented training dataset을 생성했습니다.</span>
                     </li>
-                    <li>Trained and validated a denoising diffusion model tailored for colonoscopy image synthesis.</li>
+                    <li>
+                        <span class="lang-en">Trained and validated a denoising diffusion model tailored for colonoscopy image synthesis.</span>
+                        <span class="lang-kr">Colonoscopy 영상 합성에 특화된 denoising diffusion model을 학습 및 검증했습니다.</span>
+                    </li>
                 </ul>
             </div>
 
             <!-- Sub 2 -->
             <div class="project-section">
-                <h4><i class="fa-solid fa-crosshairs"></i> Automated Cecum Detection</h4>
+                <h4><i class="fa-solid fa-crosshairs"></i>
+                    <span class="lang-en">Automated Cecum Detection</span>
+                    <span class="lang-kr">Cecum 자동 검출</span>
+                </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig2.png" alt="Automated Cecum Detection" class="project-image"
                         style="width: 100%; height: 200px; object-fit: contain; object-position: left;">
                 </div>
                 <ul class="project-list">
-                    <li>Developed a ViT-based model for real-time cecum recognition with Grad-CAM heatmap visualization.
+                    <li>
+                        <span class="lang-en">Developed a ViT-based model for real-time cecum recognition with Grad-CAM heatmap visualization.</span>
+                        <span class="lang-kr">ViT 기반 모델로 실시간 cecum 인식을 구현하고, Grad-CAM heatmap 시각화를 함께 제공했습니다.</span>
                     </li>
-                    <li>Applied TensorRT optimization for real-time deployment in clinical testing.</li>
+                    <li>
+                        <span class="lang-en">Applied TensorRT optimization for real-time deployment in clinical testing.</span>
+                        <span class="lang-kr">임상 테스트 환경에서의 실시간 배포를 위해 TensorRT optimization을 적용했습니다.</span>
+                    </li>
                 </ul>
             </div>
 
             <!-- Sub 3 -->
             <div class="project-section">
-                <h4><i class="fa-solid fa-ruler-combined"></i> Real-time Polyp Size Estimation</h4>
+                <h4><i class="fa-solid fa-ruler-combined"></i>
+                    <span class="lang-en">Real-time Polyp Size Estimation</span>
+                    <span class="lang-kr">실시간 Polyp 크기 추정</span>
+                </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig3.png" alt="Real-time Polyp Size Estimation" class="project-image"
                         style="width: 100%; height: 200px; object-fit: contain; object-position: left;">
                 </div>
                 <ul class="project-list">
-                    <li>Developed an estimation algorithm utilizing continuous monocular endoscope images.</li>
-                    <li>Used dimensions of biopsy forceps as reference objects for bounding box correction.</li>
+                    <li>
+                        <span class="lang-en">Developed an estimation algorithm utilizing continuous monocular endoscope images.</span>
+                        <span class="lang-kr">연속된 monocular endoscope 영상을 활용하는 추정 알고리즘을 개발했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Used dimensions of biopsy forceps as reference objects for bounding box correction.</span>
+                        <span class="lang-kr">Biopsy forceps의 크기를 reference로 활용하여 bounding box를 보정했습니다.</span>
+                    </li>
                 </ul>
             </div>
 
             <!-- Sub 4 -->
             <div class="project-section">
-                <h4><i class="fa-solid fa-camera-viewfinder"></i> In Vivo / Ex Vivo Classifier</h4>
+                <h4><i class="fa-solid fa-camera-viewfinder"></i>
+                    <span class="lang-en">In Vivo / Ex Vivo Classifier</span>
+                    <span class="lang-kr">In Vivo / Ex Vivo Classifier</span>
+                </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig4.png" alt="Endoscope Context Classifier" class="project-image"
                         style="width: 100%; height: 200px; object-fit: contain; object-position: left;">
                 </div>
                 <ul class="project-list">
-                    <li>Created an algorithm to distinguish whether the endoscope is inside or outside the body during
-                        procedures.</li>
-                    <li>Analyzed RGB/HSV values to define effective threshold ranges and implemented real-time logic.
+                    <li>
+                        <span class="lang-en">Created an algorithm to distinguish whether the endoscope is inside or outside the body during
+                            procedures.</span>
+                        <span class="lang-kr">시술 중 endoscope가 체내에 있는지 체외에 있는지를 구분하는 알고리즘을 만들었습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Analyzed RGB/HSV values to define effective threshold ranges and implemented real-time logic.</span>
+                        <span class="lang-kr">RGB/HSV 값을 분석해 효과적인 threshold 범위를 정의하고, 실시간 처리 로직으로 구현했습니다.</span>
                     </li>
                 </ul>
             </div>
@@ -400,57 +644,300 @@
 <!-- Project 5 -->
 <article class="project-card">
     <div class="project-header">
-        <h3 class="project-title">5. Efficient Learning for Identifying Additional b-jets in \(t\bar{t}b\bar{b}\)
-            Process</h3>
+        <h3 class="project-title">
+            <span class="lang-en">5. Efficient Learning for Identifying Additional b-jets in \(t\bar{t}b\bar{b}\)
+            Process</span>
+            <span class="lang-kr">5. \(t\bar{t}b\bar{b}\) Process에서 추가 b-jet 식별을 위한 Efficient Learning</span>
+        </h3>
         <div class="project-meta">
-            <span class="project-meta-item"><i class="fa-regular fa-calendar"></i> Sep 2020 - Mar 2022</span>
-            <span class="project-meta-item"><i class="fa-solid fa-user"></i> Key Contributor</span>
+            <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                <span class="lang-en">Sep 2020 - Mar 2022</span>
+                <span class="lang-kr">2020년 9월 - 2022년 3월</span>
+            </span>
+            <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                <span class="lang-en">Key Contributor</span>
+                <span class="lang-kr">주요 기여자</span>
+            </span>
         </div>
     </div>
 
     <div class="project-content" style="padding-top: 24px;">
         <p class="project-abstract">
-            The \(t\bar{t}Hb\bar{b}\) process is essential for revealing Higgs properties but has an irreducible
-            background from the \(t\bar{t}b\bar{b}\) process. By exploiting the special structure of
-            \(t\bar{t}b\bar{b}\) event data, we proposed
-            several loss functions minimized to directly increase matching efficiency for identifying additional
-            b-jets.
+            <span class="lang-en">
+                The \(t\bar{t}H(b\bar{b})\) process is essential for revealing Higgs boson properties but suffers from
+                an irreducible background from the \(t\bar{t}b\bar{b}\) process, where two additional \(b\)-jets arise
+                from gluon splitting. We reformulated the prior pair-level binary classification approach into an
+                event-level identification problem that respects the structural prior that each \(t\bar{t}b\bar{b}\)
+                event contains (in most cases) exactly one additional \(b\)-jet pair. Using a permutation-equivariant
+                deep network with an event-internal softmax, we trained four differentiable surrogates of the
+                non-smooth matching efficiency and improved matching efficiency from
+                <b>62.1% to 64.5% (LO, +2.4pp)</b> and <b>59.9% to 61.7% (NLO, +1.8pp)</b> over the previous binary
+                classification baseline on simulated CMS-style \(t\bar{t}b\bar{b}\) data.
+            </span>
+            <span class="lang-kr">
+                \(t\bar{t}H(b\bar{b})\) process는 Higgs boson 특성을 규명하는 핵심 채널이지만, gluon splitting에서 발생하는
+                추가 \(b\)-jet을 포함한 \(t\bar{t}b\bar{b}\) process로부터 irreducible background를 동반합니다. 본 연구에서는
+                기존의 b-jet pair 단위 binary classification 접근을 "각 event 안에서 단 하나의 추가 \(b\)-jet pair를 식별한다"는
+                event 단위 문제로 재정의하고, event 내부에서 softmax를 적용하는 permutation-equivariant deep network를 설계했습니다.
+                미분 불가능한 matching efficiency를 직접 optimize하기 위해 네 가지 differentiable surrogate loss를 제안했고,
+                CMS detector simulation 기반 \(t\bar{t}b\bar{b}\) 데이터에서 기존 binary classifier 대비 matching efficiency를
+                <b>LO 기준 62.1% → 64.5% (+2.4pp)</b>, <b>NLO 기준 59.9% → 61.7% (+1.8pp)</b>로 향상시켰습니다.
+            </span>
         </p>
+
+        <div class="project-section" style="margin-bottom: 28px;">
+            <h4><i class="fa-solid fa-square-root-variable"></i>
+                <span class="lang-en">Method &amp; Formulation</span><span class="lang-kr">방법론 및 수식 정의</span>
+            </h4>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">
+                <span class="lang-en">
+                    For an event matrix \(M_i \in \mathbb{R}^{c_i \times F}\) (\(c_i\): number of \(b\)-jet pairs in
+                    event \(i\), \(F=78\): kinematic features per pair) and the additional-pair index \(y_i\), the
+                    matching efficiency we ultimately want to maximize is
+                </span>
+                <span class="lang-kr">
+                    Event matrix \(M_i \in \mathbb{R}^{c_i \times F}\) (\(c_i\): event \(i\)의 \(b\)-jet pair 개수,
+                    \(F=78\): pair당 kinematic feature 수)와 추가 \(b\)-jet pair의 index \(y_i\)에 대해, 최종적으로
+                    최대화하고자 하는 matching efficiency는 다음과 같이 정의됩니다.
+                </span>
+            </p>
+            <p style="text-align: center; margin-bottom: 16px;">
+                \[ \text{Mat. eff.} \;=\; \frac{1}{N}\sum_{i=1}^{N}\delta\!\left(y_i,\;\hat{y}(M_i)\right),\qquad
+                \hat{y}(M_i) \;=\; \arg\max_{j\in\{1,\dots,c_i\}} f_j(M_i). \]
+            </p>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">
+                <span class="lang-en">
+                    A shared scoring network \(g:\mathbb{R}^F\!\to\!\mathbb{R}\) is applied to each pair vector
+                    \(M_{i,j:}\) and normalized event-internally via softmax, yielding a permutation-equivariant
+                    distribution that bakes in the "exactly-one signal pair per event" prior:
+                </span>
+                <span class="lang-kr">
+                    공유 scoring network \(g:\mathbb{R}^F\!\to\!\mathbb{R}\)을 각 pair vector \(M_{i,j:}\)에 적용하고
+                    event 내부에서 softmax로 normalize하여, "한 event당 정확히 하나의 signal pair" 라는 사전 지식을 모델
+                    구조에 직접 반영한 permutation-equivariant 분포를 얻습니다.
+                </span>
+            </p>
+            <p style="text-align: center; margin-bottom: 16px;">
+                \[ f_j(M_i) \;=\; \frac{\exp\!\big(g(M_{i,j:})\big)}{\sum_{k=1}^{c_i}\exp\!\big(g(M_{i,k:})\big)},\qquad
+                j=1,\dots,c_i. \]
+            </p>
+            <p style="font-size: 0.95rem; margin-bottom: 12px;">
+                <span class="lang-en">
+                    Since the matching efficiency is non-smooth (Kronecker delta) and yields zero gradients almost
+                    everywhere, we proposed four differentiable surrogates that target the same maximizer from
+                    margin, ranking, classification, and regression perspectives:
+                </span>
+                <span class="lang-kr">
+                    Matching efficiency는 Kronecker delta로 정의되어 거의 모든 점에서 gradient가 0이므로, 동일한
+                    maximizer를 margin · ranking · classification · regression 관점에서 각각 근사하는 네 가지
+                    differentiable surrogate loss를 제안했습니다.
+                </span>
+            </p>
+            <p style="text-align: center; margin-bottom: 8px;">
+                \[ \mathcal{L}_1 \;=\; -\frac{1}{N}\sum_{i=1}^{N}\!\Big(f_{y_i}(M_i)\;-\!\!\sum_{j\neq y_i}\!\!f_j(M_i)\Big),
+                \qquad
+                \mathcal{L}_2 \;=\; -\frac{1}{N}\sum_{i=1}^{N}\sum_{j\neq y_i}\log\!\frac{f_{y_i}(M_i)}{f_{y_i}(M_i)+f_j(M_i)}, \]
+                \[ \mathcal{L}_3 \;=\; -\frac{1}{N}\sum_{i=1}^{N}\log f_{y_i}(M_i),\qquad
+                \mathcal{L}_4 \;=\; \frac{1}{N}\sum_{i=1}^{N}\big\|f(M_i)-\text{one\_hot}(y_i)\big\|_2^{\,2}. \]
+            </p>
+            <p style="font-size: 0.9rem; opacity: 0.85;">
+                <span class="lang-en">
+                    \(\mathcal{L}_1\): margin between the signal score and competing-pair scores; \(\mathcal{L}_2\):
+                    pairwise RankNet-style cross-entropy; \(\mathcal{L}_3\): categorical cross-entropy whose
+                    classification accuracy <i>coincides exactly with</i> matching efficiency; \(\mathcal{L}_4\): MSE
+                    against the one-hot signal index.
+                </span>
+                <span class="lang-kr">
+                    \(\mathcal{L}_1\): signal pair score와 나머지 pair score 사이의 margin, \(\mathcal{L}_2\):
+                    pairwise RankNet 형태의 cross-entropy, \(\mathcal{L}_3\): classification accuracy가 matching
+                    efficiency와 <i>정확히 일치</i>하는 categorical cross-entropy, \(\mathcal{L}_4\): one-hot signal
+                    index에 대한 MSE.
+                </span>
+            </p>
+        </div>
 
         <div class="project-details">
             <div class="project-section">
-                <h4><i class="fa-solid fa-star"></i> Contributions</h4>
+                <h4><i class="fa-solid fa-star"></i>
+                    <span class="lang-en">Contributions</span><span class="lang-kr">기여한 점</span>
+                </h4>
                 <ul class="project-list">
-                    <li>Demonstrated limitations of conventional binary classification approaches.</li>
-                    <li>Redefined the identification problem by leveraging the unique structure of the
-                        \(t\bar{t}b\bar{b}\) process.</li>
-                    <li>Proposed four surrogate loss functions (\(L_1-L_4\)) to directly optimize matching
-                        efficiency.</li>
+                    <li>
+                        <span class="lang-en">Reframed the additional \(b\)-jet identification task from per-pair binary
+                        classification to <b>event-level multi-class matching</b>, aligning the training objective
+                        with the actual evaluation metric (matching efficiency).</span>
+                        <span class="lang-kr">추가 \(b\)-jet 식별 문제를 pair 단위 binary classification에서 <b>event 단위
+                        multi-class matching</b>으로 재정의하여, training objective와 실제 평가 지표(matching
+                        efficiency)를 일치시켰습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Designed a <b>permutation-equivariant DNN</b> that shares a scoring head
+                        across pairs and applies an event-internal softmax over a variable number of pairs \(c_i\),
+                        encoding the "exactly-one signal pair per event" prior directly into the model.</span>
+                        <span class="lang-kr">Pair마다 공유 scoring head를 적용하고 event 내부에서 가변 길이 \(c_i\)에 대해
+                        softmax를 수행하는 <b>permutation-equivariant DNN</b>을 설계해, "한 event당 정확히 하나의
+                        signal pair"라는 사전 지식을 모델 구조에 직접 인코딩했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Proposed and analyzed four surrogate losses
+                        (\(\mathcal{L}_1, \mathcal{L}_2\)) covering margin, ranking, classification, and regression
+                        families as differentiable proxies for the non-smooth matching efficiency.</span>
+                        <span class="lang-kr">미분 불가능한 matching efficiency에 대한 differentiable proxy로 margin ·
+                        ranking · classification · regression 계열을 모두 포괄하는 네 가지 surrogate loss
+                        (\(\mathcal{L}_1, \mathcal{L}_2\))를 제안하고 특성을 분석했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Designed a 2-D synthetic dataset that mirrors the structural prior of
+                        \(t\bar{t}b\bar{b}\) event matrices (one signal vector per matrix, multiple background vectors
+                        with class-overlap by construction) to expose, both visually and quantitatively, why pair-level
+                        binary classification is fundamentally misaligned with the event-level objective — and to
+                        demonstrate that all four proposed losses recover the structurally correct decision boundary.</span>
+                        <span class="lang-kr">\(t\bar{t}b\bar{b}\) event matrix의 구조적 사전지식(matrix당 신호 vector 1개,
+                        의도적으로 class overlap을 갖는 배경 vector 다수)을 그대로 모사하는 2-D synthetic dataset을 직접
+                        설계하여, pair 단위 binary classification이 event 단위 objective와 본질적으로 어긋난다는 점을
+                        시각적·정량적으로 드러내고, 제안한 네 가지 loss가 모두 구조적으로 올바른 결정경계를 복원함을
+                        입증했습니다.</span>
+                    </li>
                 </ul>
             </div>
             <div class="project-section">
-                <h4><i class="fa-solid fa-triangle-exclamation"></i> Challenges</h4>
+                <h4><i class="fa-solid fa-triangle-exclamation"></i>
+                    <span class="lang-en">Challenges</span><span class="lang-kr">어려움</span>
+                </h4>
                 <ul class="project-list">
-                    <li>Required to build foundational understanding of particle physics to address domain-specific
-                        problems.</li>
-                    <li>Needed to demonstrate that the existing binary classification approach was suboptimal for this
-                        task.</li>
-                    <li>Task-specific evaluation metric was non-differentiable, making direct optimization difficult.
+                    <li>
+                        <span class="lang-en">Required building working knowledge of LHC physics, the
+                        \(t\bar{t}H(b\bar{b})\)–\(t\bar{t}b\bar{b}\) channel structure, gluon splitting kinematics, and
+                        \(b\)-jet tagging (DeepCSV, ~50% efficiency at the tight working point) to design a method
+                        defensible to physicists.</span>
+                        <span class="lang-kr">LHC 물리, \(t\bar{t}H(b\bar{b})\)–\(t\bar{t}b\bar{b}\) 채널 구조,
+                        gluon splitting kinematics, 그리고 \(b\)-jet tagging (DeepCSV, tight working point에서 ~50%
+                        효율) 등을 학습해, 물리학자에게 설득 가능한 방법론을 설계해야 했습니다.</span>
                     </li>
-                    <li>Needed to explain the distinctive properties of each proposed model.</li>
+                    <li>
+                        <span class="lang-en">The previous best DNN baseline minimized binary cross-entropy
+                        \(\mathcal{L}_{BCE}\) at the pair level, an objective that does <i>not</i> coincide with
+                        event-level matching efficiency; the gap had to be made rigorous rather than asserted.</span>
+                        <span class="lang-kr">기존 SOTA였던 DNN baseline은 pair 단위에서 binary cross-entropy
+                        \(\mathcal{L}_{BCE}\)를 최소화했지만, 이 목적함수는 event 단위 matching efficiency와
+                        일치하지 않습니다. 이 간극을 직관이 아닌 분석·실험으로 입증해야 했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Matching efficiency is defined via the Kronecker delta — non-smooth
+                        with zero gradient almost everywhere — so it cannot be plugged into gradient-based
+                        optimization directly.</span>
+                        <span class="lang-kr">Matching efficiency는 Kronecker delta로 정의되어 거의 모든 점에서 gradient가
+                        0인 non-smooth function이라, gradient-based optimization에 직접 사용할 수 없습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Each event has a variable number of \(b\)-jet pairs \(c_i\), so the
+                        model had to ingest variable-size inputs and produce variable-size outputs while remaining
+                        permutation-equivariant.</span>
+                        <span class="lang-kr">각 event마다 \(b\)-jet pair 수 \(c_i\)가 다르므로, 가변 크기 입출력을 다루면서도
+                        permutation-equivariance를 유지하는 모델 구조가 필요했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">A stronger binary baseline (Model 2) augmented with the same
+                        event-level features as our model could absorb the feature gain — so we had to isolate the
+                        objective itself, not the features, as the source of improvement.</span>
+                        <span class="lang-kr">우리 모델과 동일한 event 단위 feature를 입력받는 강화된 binary baseline
+                        (Model 2)이 feature 효과를 흡수할 수 있었으므로, 성능 향상의 원인이 feature가 아닌 <i>objective
+                        그 자체</i>에 있음을 구분해서 입증해야 했습니다.</span>
+                    </li>
                 </ul>
             </div>
             <div class="project-section">
-                <h4><i class="fa-solid fa-lightbulb"></i> Solutions</h4>
+                <h4><i class="fa-solid fa-lightbulb"></i>
+                    <span class="lang-en">Solutions</span><span class="lang-kr">해결 방안</span>
+                </h4>
                 <ul class="project-list">
-                    <li>Collaborated closely with a particle physics research group for domain knowledge and validation.
+                    <li>
+                        <span class="lang-en">Designed a 2-D synthetic proof-of-concept dataset (signal sampled from
+                        a Gaussian, three backgrounds shifted left with vertical noise) and visualized model level
+                        sets — the binary classifier produced an arbitrary boundary due to inter-matrix overlap, while
+                        all four proposed losses recovered the structurally correct vertical level sets and reached
+                        100% matching efficiency.</span>
+                        <span class="lang-kr">2-D Gaussian, background 3개는 왼쪽으로 이동시켜 수직 noise를 주입한 synthetic
+                        proof-of-concept dataset을 설계하고 모델의 level set을 시각화했습니다. Binary classifier는
+                        matrix 간 overlap 때문에 임의의 결정경계를 학습한 반면, 제안한 네 가지 loss는 모두 구조적으로
+                        올바른 수직 level set을 복원하며 100% matching efficiency를 달성했습니다.</span>
                     </li>
-                    <li>Designed synthetic datasets resembling real particle data structure to theoretically and
-                        empirically prove the weakness of baseline methods.</li>
-                    <li>Analyzed the metric's properties and derived a differentiable approximation as a surrogate loss
-                        for training.</li>
-                    <li>Created multiple data subsets based on task characteristics to evaluate and interpret model
-                        performance effectively.</li>
+                    <li>
+                        <span class="lang-en">Benchmarked across LO subsets {12.5K, 50K, 202K} and NLO subsets
+                        {5K, 10K, 21K} for sample-efficiency analysis; trained with Adam (lr 1e-3, batch 2048),
+                        dropout 0.08, and L2 regularization 0.01 in Keras, with the batch normalization layer used
+                        for all losses except \(\mathcal{L}_2\).</span>
+                        <span class="lang-kr">LO 부분집합 {12.5K, 50K, 202K}과 NLO 부분집합 {5K, 10K, 21K}에 대해
+                        sample-efficiency 실험을 진행했고, Keras 기반으로 Adam (lr 1e-3, batch 2048), dropout 0.08,
+                        L2 regularization 0.01을 사용했으며, batch normalization은 \(\mathcal{L}_2\)를 제외한 모든
+                        loss에 적용했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Confirmed that the categorical cross-entropy surrogate
+                        (\(\mathcal{L}_3\)) — whose classification accuracy <i>equals</i> matching efficiency —
+                        consistently delivered best or statistically comparable matching efficiency across LO/NLO
+                        and across data sizes, while still outperforming Model 2 (binary classifier with the same
+                        event-level features) — isolating the <b>objective</b>, not the features, as the source of
+                        the gain.</span>
+                        <span class="lang-kr">Classification accuracy가 matching efficiency와 <i>일치</i>하는
+                        categorical cross-entropy surrogate (\(\mathcal{L}_3\))가 LO/NLO와 데이터 크기 전반에 걸쳐
+                        최고 혹은 통계적으로 동등한 matching efficiency를 일관되게 보였고, 동일 event-level feature를
+                        가진 Model 2까지도 능가하여 성능 향상의 원인이 feature가 아닌 <b>objective</b> 자체에 있음을
+                        분리 입증했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Demonstrated that <b>higher AUC does not imply higher matching
+                        efficiency</b>: Model 2 attained higher AUC (0.834 LO) than \(\mathcal{L}_3\) (0.741 LO) yet
+                        a lower matching efficiency (0.634 vs 0.645) — reinforcing that aligning the training
+                        objective with the deployment metric matters more than incidental classification metrics.</span>
+                        <span class="lang-kr"><b>높은 AUC가 높은 matching efficiency를 의미하지 않음</b>을 입증했습니다.
+                        Model 2는 LO에서 AUC 0.834로 \(\mathcal{L}_3\)의 0.741보다 높지만 matching efficiency는 0.634로
+                        \(\mathcal{L}_3\)의 0.645보다 낮았으며, 이는 부수적인 classification 지표보다 training objective와
+                        실제 평가 metric의 정렬이 더 중요함을 보여줍니다.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="project-section">
+                <h4><i class="fa-solid fa-chart-line"></i>
+                    <span class="lang-en">Results &amp; Impact</span><span class="lang-kr">결과 및 임팩트</span>
+                </h4>
+                <ul class="project-list">
+                    <li>
+                        <span class="lang-en">Matching efficiency on full LO data: \(\mathcal{L}_{BCE}\) (Model 1)
+                        0.621 → \(\mathcal{L}_3\) <b>0.645</b> (+2.4pp); on full NLO data: 0.599 → <b>0.617</b>
+                        (+1.8pp). Gains held across smaller training subsets, confirming sample-efficiency.</span>
+                        <span class="lang-kr">전체 LO 데이터 기준 matching efficiency: \(\mathcal{L}_{BCE}\) (Model 1)
+                        0.621 → \(\mathcal{L}_3\) <b>0.645</b> (+2.4pp); 전체 NLO 데이터 기준: 0.599 → <b>0.617</b>
+                        (+1.8pp). 더 작은 학습 부분집합에서도 동일한 개선폭이 유지되어 sample-efficiency 또한 입증했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Outperformed both the original binary classifier (Model 1) and a
+                        feature-enhanced binary classifier (Model 2) that consumed the same event-level information
+                        as our model, isolating the loss function — not feature engineering — as the source of the
+                        improvement.</span>
+                        <span class="lang-kr">원본 binary classifier (Model 1)뿐만 아니라 우리 모델과 동일한 event-level
+                        정보를 입력받는 feature-enhanced binary classifier (Model 2)까지 모두 능가하여, 성능 향상의
+                        원인이 feature engineering이 아닌 loss function에 있음을 분리해서 입증했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Provided a more accurate identification of additional \(b\)-jets in the
+                        \(t\bar{t}b\bar{b}\) process, contributing toward more precise differential cross-section
+                        measurements and ultimately tightening the sensitivity of the \(t\bar{t}H(b\bar{b})\) Higgs
+                        coupling search at the LHC.</span>
+                        <span class="lang-kr">\(t\bar{t}b\bar{b}\) process의 추가 \(b\)-jet 식별 정확도를 향상시켜 더 정밀한
+                        differential cross-section 측정에 기여했으며, 궁극적으로 LHC에서의 \(t\bar{t}H(b\bar{b})\)
+                        Higgs coupling 탐색 민감도를 강화하는 데 도움을 줍니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en">Results published in <i>European Physical Journal Plus</i> (2022); the
+                        event-level softmax + surrogate-loss recipe transfers naturally to other "exactly-one
+                        signal among \(K\) candidates" tasks (e.g., jet-parton assignment, candidate ranking,
+                        instance-level pointer prediction).</span>
+                        <span class="lang-kr">결과는 <i>European Physical Journal Plus</i> (2022)에 게재되었고, 본
+                        event-level softmax + surrogate loss 패턴은 "\(K\)개 후보 중 정확히 하나의 signal 식별"이
+                        필요한 일반 문제(예: jet-parton assignment, candidate ranking, instance-level pointer
+                        prediction)에도 자연스럽게 이식 가능합니다.</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -465,3 +952,66 @@
 </footer>
 
 </div>
+
+<!-- Theme + language toggle behaviour -->
+<script>
+    (function () {
+        var STORAGE_THEME = 'sk-theme';
+        var STORAGE_LANG = 'sk-lang';
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.body.classList.add('light-mode');
+            } else {
+                document.body.classList.remove('light-mode');
+            }
+            document.querySelectorAll('[data-theme]').forEach(function (btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
+            });
+            try { localStorage.setItem(STORAGE_THEME, theme); } catch (e) { }
+        }
+
+        function applyLang(lang) {
+            if (lang === 'kr') {
+                document.body.classList.add('lang-kr-mode');
+                document.documentElement.setAttribute('lang', 'ko');
+            } else {
+                document.body.classList.remove('lang-kr-mode');
+                document.documentElement.setAttribute('lang', 'en');
+            }
+            document.querySelectorAll('[data-lang]').forEach(function (btn) {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+            try { localStorage.setItem(STORAGE_LANG, lang); } catch (e) { }
+        }
+
+        function init() {
+            var savedTheme = 'dark';
+            var savedLang = 'en';
+            try {
+                savedTheme = localStorage.getItem(STORAGE_THEME) || 'dark';
+                savedLang = localStorage.getItem(STORAGE_LANG) || 'en';
+            } catch (e) { }
+
+            applyTheme(savedTheme);
+            applyLang(savedLang);
+
+            document.querySelectorAll('[data-theme]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    applyTheme(btn.getAttribute('data-theme'));
+                });
+            });
+            document.querySelectorAll('[data-lang]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    applyLang(btn.getAttribute('data-lang'));
+                });
+            });
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+    })();
+</script>
