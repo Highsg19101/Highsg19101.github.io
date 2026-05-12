@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 
 <!-- Add specific styling and required scripts -->
 <link rel="stylesheet" href="./assets/css/ag_styles.css">
@@ -83,7 +84,7 @@
                     저는 분당서울대학교병원 심혈관센터 AI팀의 machine learning engineer로, 심장내과 강시혁 교수님과 긴밀히 협력하며 연구를 수행하고 있습니다.
                     한양대학교에서 M.S.를 취득하였고, 그곳에서 Advanced Application for Intelligence Systems Laboratory 소속으로 연구를 진행했습니다.
                     노영균 교수님의 지도 아래 딥러닝 이론을 공부하고 새로운 학습의 접근 방식을 탐구했습니다.
-                    저의 <a href="https://highsg19101.github.io/Sang-Kyun Ko Thesis for MS.pdf" target="_blank">석사학위 논문</a>에서는 survival analysis의
+                    <a href="https://highsg19101.github.io/Sang-Kyun Ko Thesis for MS.pdf" target="_blank">학위 논문</a>에서는 survival analysis의
                     censored data를 다루기 위한 새로운 learning method와, particle physics의 특정 평가 지표를 directly optimize하기 위한
                     새로운 objective function을 제안했습니다. 현재는 실제 임상에서 활용할 수 있는 diffusion과 flow기반 생성 모델을 연구하고 있습니다.
                 </span>
@@ -230,17 +231,62 @@
             <span class="lang-en">Projects</span><span class="lang-kr">프로젝트</span>
         </h2>
 
-        <!-- Project 1 -->
+        <!-- Project 1 (F2C) -->
         <article class="project-card">
             <div class="project-header">
                 <h3 class="project-title">
-                    <span class="lang-en">1. Video Frame Interpolation for Coronary Angiograms</span>
-                    <span class="lang-kr">1. 관상동맥 조영영상의 Video Frame Interpolation</span>
+                    <span class="lang-en">1. Fluoro-to-Cine Translation via Rectified Flow</span>
+                    <span class="lang-kr">1. Fluoro-to-Cine Translation via Rectified Flow</span>
+                </h3>
+                <div class="project-meta">
+                    <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                        <span class="lang-en">Apr 2026 - In progress</span>
+                        <span class="lang-kr">2026년 4월 - 진행 중</span>
+                    </span>
+                    <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                        <span class="lang-en">Project Lead</span>
+                        <span class="lang-kr">프로젝트 리드</span>
+                    </span>
+                </div>
+            </div>
+            <div class="project-images">
+                <img src="f2c_thumb.png" alt="Fluoro-to-Cine before/after preview" class="project-image bg-white">
+            </div>
+            <div class="project-content">
+                <p class="project-abstract">
+                    <span class="lang-en">
+                        Coronary fluoroscopy is acquired at low dose for radiation safety, producing noisy frames that
+                        interventional cardiologists rely on for real-time guidance. Cine angiography, in contrast, is
+                        acquired at higher dose with much higher SNR but used sparingly. We propose
+                        <b>Fluoro-to-Cine (F2C)</b>, a conditional generative model that translates a noisy fluoro-like
+                        frame back to a clean cine-quality frame.
+                    </span>
+                    <span class="lang-kr">
+                        관상동맥 fluoroscopy는 방사선 안전을 위해 저선량으로 촬영되어 noise가 많고, 시술 중 실시간 영상으로
+                        활용됩니다. 반면 cine angiography는 고선량으로 촬영되어 SNR이 훨씬 높지만 진단용으로 제한적으로 쓰입니다.
+                        본 연구에서는 noisy fluoro frame을 clean cine 품질로 복원하는 conditional generative model
+                        <b>Fluoro-to-Cine (F2C)</b>를 제안합니다.
+                    </span>
+                </p>
+
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3 class="project-title">
+                    <span class="lang-en">2. Video Frame Interpolation for Coronary Angiograms</span>
+                    <span class="lang-kr">2. Video Frame Interpolation for Coronary Angiograms</span>
                 </h3>
                 <div class="project-meta">
                     <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
                         <span class="lang-en">Mar 2025 - In progress</span>
                         <span class="lang-kr">2025년 3월 - 진행 중</span>
+                    </span>
+                    <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                        <span class="lang-en">Contributor</span>
+                        <span class="lang-kr">기여자</span>
                     </span>
                 </div>
             </div>
@@ -285,8 +331,8 @@
         <article class="project-card">
             <div class="project-header">
                 <h3 class="project-title">
-                    <span class="lang-en">2. ASCVD Risk Prediction in Koreans using KAN</span>
-                    <span class="lang-kr">2. KAN을 활용한 한국인 ASCVD Risk Prediction</span>
+                    <span class="lang-en">3. ASCVD Risk Prediction in Koreans using KAN</span>
+                    <span class="lang-kr">3. ASCVD Risk Prediction in Koreans using KAN</span>
                 </h3>
                 <div class="project-meta">
                     <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
@@ -403,8 +449,8 @@
         <article class="project-card">
             <div class="project-header">
                 <h3 class="project-title">
-                    <span class="lang-en">3. Data Reconstruction Method for Learning to Censored Survival Data</span>
-                    <span class="lang-kr">3. Censored Survival Data 학습을 위한 Data Reconstruction Method</span>
+                    <span class="lang-en">4. Data Reconstruction Method for Learning to Censored Survival Data</span>
+                    <span class="lang-kr">4. Data Reconstruction Method for Learning to Censored Survival Data</span>
                 </h3>
                 <div class="project-meta">
                     <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
@@ -521,8 +567,8 @@
 <article class="project-card">
     <div class="project-header">
         <h3 class="project-title">
-            <span class="lang-en">4. Assistive AI in Endoscopy</span>
-            <span class="lang-kr">4. Endoscopy 보조 AI</span>
+            <span class="lang-en">5. Assistive AI in Endoscopy</span>
+            <span class="lang-kr">5. Assistive AI in Endoscopy</span>
         </h3>
         <div class="project-meta">
             <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
@@ -553,7 +599,7 @@
             <div class="project-section">
                 <h4><i class="fa-solid fa-microscope"></i>
                     <span class="lang-en">Synthetic Colonoscopy Images</span>
-                    <span class="lang-kr">Synthetic Colonoscopy 영상</span>
+                    <span class="lang-kr">Synthetic Colonoscopy Images</span>
                 </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig1.png" alt="Synthetic Colonoscopy Images" class="project-image"
@@ -575,7 +621,7 @@
             <div class="project-section">
                 <h4><i class="fa-solid fa-crosshairs"></i>
                     <span class="lang-en">Automated Cecum Detection</span>
-                    <span class="lang-kr">Cecum 자동 검출</span>
+                    <span class="lang-kr">Automated Cecum Detection</span>
                 </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig2.png" alt="Automated Cecum Detection" class="project-image"
@@ -597,7 +643,7 @@
             <div class="project-section">
                 <h4><i class="fa-solid fa-ruler-combined"></i>
                     <span class="lang-en">Real-time Polyp Size Estimation</span>
-                    <span class="lang-kr">실시간 Polyp 크기 추정</span>
+                    <span class="lang-kr">Real-time Polyp Size Estimation</span>
                 </h4>
                 <div class="project-images" style="padding: 0 0 16px 0;">
                     <img src="endo_fig3.png" alt="Real-time Polyp Size Estimation" class="project-image"
@@ -645,9 +691,10 @@
 <article class="project-card">
     <div class="project-header">
         <h3 class="project-title">
-            <span class="lang-en">5. Efficient Learning for Identifying Additional b-jets in \(t\bar{t}b\bar{b}\)
+            <span class="lang-en">6. Efficient Learning for Identifying Additional b-jets in \(t\bar{t}b\bar{b}\)
             Process</span>
-            <span class="lang-kr">5. \(t\bar{t}b\bar{b}\) Process에서 추가 b-jet 식별을 위한 Efficient Learning</span>
+            <span class="lang-kr">6. Efficient Learning for Identifying Additional b-jets in \(t\bar{t}b\bar{b}\)
+            Process</span>
         </h3>
         <div class="project-meta">
             <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
@@ -946,9 +993,112 @@
 
 </section>
 
+<!-- ============================================================ -->
+<!-- SIDES — Side projects / products outside research            -->
+<!-- ============================================================ -->
+<section class="delay-5 animate-fade-in">
+    <h2 class="section-title">
+        <span class="lang-en">Sides</span><span class="lang-kr">Sides</span>
+    </h2>
+
+    <!-- Side 1: Pglemaps -->
+    <article class="project-card">
+        <div class="project-header">
+            <h3 class="project-title">
+                <span class="lang-en">Pglemaps — Travel Itinerary Platform</span>
+                <span class="lang-kr">Pglemaps — Travel Itinerary Platform</span>
+            </h3>
+            <div class="project-meta">
+                <span class="project-meta-item"><i class="fa-regular fa-calendar"></i>
+                    <span class="lang-en">-</span>
+                    <span class="lang-kr">-</span>
+                </span>
+                <span class="project-meta-item"><i class="fa-solid fa-user"></i>
+                    <span class="lang-en">Co-founder &amp; CTO</span>
+                    <span class="lang-kr">공동 창업자 및 기술 총괄</span>
+                </span>
+                <span class="project-meta-item"><i class="fa-solid fa-globe"></i>
+                    <a href="https://www.pglemaps.com" target="_blank" rel="noopener"
+                       style="color: var(--accent-color); text-decoration: none;">www.pglemaps.com</a>
+                </span>
+            </div>
+        </div>
+
+        <div class="project-images">
+            <img src="pglemaps.png" alt="Pglemaps — travel basket and route planner"
+                 class="project-image bg-white" style="max-height: 360px; object-fit: contain;">
+        </div>
+
+        <div class="project-content">
+            <p class="project-abstract">
+                <span class="lang-en">
+                    <b>Pglemaps</b> (<a href="https://www.pglemaps.com" target="_blank" rel="noopener">www.pglemaps.com</a>)
+                    is a co-founded travel-itinerary platform; on the technical side I personally owned everything,
+                    leveraging LLMs extensively to design and ship the system from architecture to operations.
+                    Travelers pick a country/city/stay, drop places into a day-by-day "basket," and the service
+                    visualizes the optimized route on a map, generates an AI route-brief, and lets them export the
+                    plan as a PDF or a shareable link. The codebase blends <b>FastAPI + PostgreSQL/PostGIS +
+                    multi-engine search (Mapbox / Kakao / Google / Naver / proprietary data)</b>, an SSR + modular
+                    vanilla-JS frontend, and a Next.js content sub-system for SEO-driven acquisition.
+                </span>
+                <span class="lang-kr">
+                    <b>Pglemaps</b>(<a href="https://www.pglemaps.com" target="_blank" rel="noopener">www.pglemaps.com</a>)는
+                    공동 창업하여 개발된 여행 동선 설계 플랫폼으로, 기술적인 부분을 직접 전담하여 LLM을 적극 활용해
+                    아키텍처부터 운영까지 설계·제작되었습니다. 여행자는 국가/도시/숙소를 고르고, 가고 싶은 장소를
+                    day 단위 "바스켓"에 담으면, 서비스가 최적화된 동선을 지도에 시각화하고, AI 경로 brief를 생성하며,
+                    일정을 PDF·공유 링크로 내보내 줍니다. 코드베이스는 <b>FastAPI + PostgreSQL/PostGIS + 멀티 엔진
+                    검색(Mapbox · Kakao · Google · Naver · 자체 수집 데이터)</b>, SSR + 모듈형 vanilla-JS 프론트엔드,
+                    그리고 SEO 유입을 위한 Next.js 콘텐츠 서브시스템으로 구성됩니다.
+                </span>
+            </p>
+
+            <div class="project-section" style="margin-bottom: 28px;">
+                <h4><i class="fa-solid fa-layer-group"></i>
+                    <span class="lang-en">Architecture at a glance</span><span class="lang-kr">아키텍처 한눈에 보기</span>
+                </h4>
+                <ul class="project-list">
+                    <li>
+                        <span class="lang-en"><b>Backend</b>: Python 3 · FastAPI · Uvicorn · SQLAlchemy + GeoAlchemy2 ·
+                        psycopg2 · httpx · Jinja2 · ReportLab</span>
+                        <span class="lang-kr"><b>백엔드</b>: Python 3 · FastAPI · Uvicorn · SQLAlchemy + GeoAlchemy2 ·
+                        psycopg2 · httpx · Jinja2 · ReportLab</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Data layer</b>: PostgreSQL · PostGIS</span>
+                        <span class="lang-kr"><b>데이터 계층</b>: PostgreSQL · PostGIS</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Frontend</b>: Jinja2 SSR · Vanilla JS</span>
+                        <span class="lang-kr"><b>프론트엔드</b>: Jinja2 SSR · Vanilla JS</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Content sub-app</b>: Next.js 16 · React 19 · TypeScript · Tailwind · Radix UI</span>
+                        <span class="lang-kr"><b>콘텐츠 서브앱</b>: Next.js 16 · React 19 · TypeScript · Tailwind · Radix UI</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Infra &amp; Ops</b>: Docker · Nginx · AWS EC2</span>
+                        <span class="lang-kr"><b>인프라 · 운영</b>: Docker · Nginx · AWS EC2</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </article>
+
+</section>
+
 <!-- FOOTER -->
 <footer>
     <p>&copy; 2025 Sang-Kyun Ko. Built with Latex Jekyll.</p>
+    <p style="margin-top: 8px; line-height: 1;">
+        <a href="https://hits.sh/highsg19101.github.io/" target="_blank" rel="noopener"
+           style="text-decoration: none; opacity: 0.8;">
+            <img src="https://hits.sh/highsg19101.github.io.svg?style=flat-square&label=visits&color=58a6ff&labelColor=30363d"
+                 alt="visit counter"
+                 style="vertical-align: middle; height: 20px;"
+                 loading="lazy">
+        </a>
+    </p>
 </footer>
 
 </div>
