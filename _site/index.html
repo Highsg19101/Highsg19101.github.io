@@ -1137,14 +1137,12 @@
 
         function init() {
             var savedTheme = 'dark';
-            var savedLang = 'en';
             try {
                 savedTheme = localStorage.getItem(STORAGE_THEME) || 'dark';
-                savedLang = localStorage.getItem(STORAGE_LANG) || 'en';
             } catch (e) { }
 
             applyTheme(savedTheme);
-            applyLang(savedLang);
+            applyLang('en');
 
             document.querySelectorAll('[data-theme]').forEach(function (btn) {
                 btn.addEventListener('click', function () {
