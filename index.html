@@ -1082,6 +1082,111 @@
                 </ul>
             </div>
 
+            <!-- Hidden: kept in source for future use, not rendered on page -->
+            <div class="project-section" style="display: none; margin-bottom: 28px;">
+                <h4><i class="fa-solid fa-star"></i>
+                    <span class="lang-en">Engineering highlights</span><span class="lang-kr">엔지니어링 하이라이트</span>
+                </h4>
+                <ul class="project-list">
+                    <li>
+                        <span class="lang-en"><b>Multi-engine search router.</b> The search layer is not bound to
+                        a single provider — country/category routing dispatches to Mapbox (Japan geocode), Kakao
+                        (Korea stays/address/food), Google Places (general fallback), Hotpepper (Japanese
+                        restaurants), and an internal PostGIS read-model with trigram + Hangul-jamo similarity
+                        scoring. Failure of any provider falls back to the next tier; results are normalized to a
+                        single Pglemaps schema before reaching the UI.</span>
+                        <span class="lang-kr"><b>멀티 엔진 검색 라우터.</b> 검색은 단일 공급자에 종속되지 않고,
+                        국가/카테고리 단위 라우팅이 Mapbox(일본 지오코딩) · Kakao(한국 숙소·주소·맛집) ·
+                        Google Places(일반 fallback) · Hotpepper(일본 음식점) · trigram과 한글 자모 유사도까지
+                        적용된 PostGIS 내부 read-model로 dispatch됩니다. 어떤 공급자가 실패하든 다음 tier로
+                        fallback되며, 결과는 UI 전달 전 단일 Pglemaps 스키마로 정규화합니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Route optimization with verification.</b> Mapbox Optimization
+                        API is not blindly trusted — the service computes both the user-defined order and the
+                        optimization result, then re-runs Mapbox Directions on each to verify the actual distance
+                        delta. Order is only swapped when the gain crosses a calibrated threshold, and the
+                        (day, origin, destination, waypoint set) tuple is cached so repeated clicks are free.</span>
+                        <span class="lang-kr"><b>검증형 동선 최적화.</b> Mapbox Optimization API의 결과를 그대로
+                        쓰지 않고, 사용자 순서 vs 최적화 순서 둘 다에 대해 Mapbox Directions를 재호출해 실제 거리
+                        차이를 검증합니다. 임계값을 넘는 이득이 있을 때만 순서를 바꾸고,
+                        (day, origin, destination, waypoint set) 튜플을 캐시해 반복 클릭 비용을 0으로 만듭니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>State-as-product, not page-as-product.</b> Travel planning state
+                        (country/city/stays/days/basket/summary) is unified into a single in-memory session
+                        document keyed by cookie session_id, with TTL/eviction tunables. Only the <i>shareable
+                        artifact</i> is persisted to Postgres (<code>plan_shares</code>) as a JSON payload —
+                        keeping the editing path fast and the share path reproducible.</span>
+                        <span class="lang-kr"><b>"화면" 단위가 아닌 "상태" 단위 제품 모델링.</b> 국가/도시/숙소/
+                        일자/바스켓/요약을 쿠키 session_id 기반의 단일 인메모리 session document로 통합 관리하며,
+                        TTL · eviction이 튜닝 가능합니다. <i>공유 가능한 결과물</i>만 Postgres
+                        <code>plan_shares</code>에 JSON payload로 영속화하여, 편집 경로는 빠르게 · 공유 경로는
+                        재현 가능하게 분리했습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Structured AI output, not raw text.</b> Gemini summaries are
+                        constrained and re-parsed into a Day → Route-segment → Collapsible-detail tree, so the
+                        UI accordion never breaks regardless of LLM phrasing variance. AI is positioned as an
+                        explanation enhancer over a deterministic basket, not as the planner itself.</span>
+                        <span class="lang-kr"><b>"텍스트"가 아닌 "구조화된" AI 출력.</b> Gemini summary는 제약된
+                        프롬프트로 생성한 뒤 Day → 이동 구간 → 접힘 상세 트리로 재파싱하여, LLM 표현 편차와
+                        무관하게 UI accordion이 안정적으로 렌더링됩니다. AI는 결정형 basket 위의 <i>설명력 보강</i>
+                        엔진으로 배치되어 있고, planner 자체를 대체하지 않습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Server-rendered PDF as first-class output.</b> The final
+                        itinerary is rendered with ReportLab on the server (not browser print), giving consistent
+                        typography, deterministic layout, and a printable artifact identical across devices.</span>
+                        <span class="lang-kr"><b>서버 렌더링 PDF를 1급 출력으로.</b> 최종 일정은 브라우저 print가
+                        아닌 서버측 ReportLab으로 생성되어, 디바이스/브라우저 차이와 무관하게 일관된 타이포그래피와
+                        결정적 레이아웃을 보장합니다.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hidden: kept in source for future use, not rendered on page -->
+            <div class="project-section" style="display: none;">
+                <h4><i class="fa-solid fa-compass"></i>
+                    <span class="lang-en">What this work represents</span><span class="lang-kr">이 작업이 의미하는 것</span>
+                </h4>
+                <ul class="project-list">
+                    <li>
+                        <span class="lang-en"><b>End-to-end product ownership.</b> Domain modeling, backend, database,
+                        frontend, AI integration, infra, deployment, SEO content, and ops — all designed and shipped
+                        by a single engineer, in production with real users.</span>
+                        <span class="lang-kr"><b>End-to-end 제품 오너십.</b> 도메인 모델링 · 백엔드 · DB · 프론트엔드 ·
+                        AI 통합 · 인프라 · 배포 · SEO 콘텐츠 · 운영까지 1인이 설계 · 출시했고, 실제 사용자가 쓰는
+                        프로덕션 상태입니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>System design pragmatism.</b> Choices like SSR + split-bootstrap
+                        instead of a heavy SPA, JSON payload share instead of full RDB normalization, and verified
+                        route optimization instead of blind API trust — each is a deliberate engineering trade-off,
+                        not a default.</span>
+                        <span class="lang-kr"><b>실용적 시스템 설계 감각.</b> 무거운 SPA 대신 SSR + split-bootstrap,
+                        풀 RDB 정규화 대신 JSON payload share, 외부 API 맹신 대신 검증형 최적화 — 각각이 디폴트가
+                        아닌 의식적인 엔지니어링 트레이드오프입니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>AI integrated as a tool, not a crutch.</b> Gemini is shaped to fit a
+                        deterministic UI tree, image selection is bounded by a license-safe pool, and AI failure
+                        degrades gracefully — never a critical-path dependency.</span>
+                        <span class="lang-kr"><b>AI를 도구로 통합, 의존하지 않음.</b> Gemini는 결정형 UI 트리에 맞게
+                        형식이 강제되고, 이미지 선택은 라이선스-안전한 풀에 한정되며, AI 장애는 graceful하게
+                        degrade — 크리티컬 패스 의존성으로 두지 않았습니다.</span>
+                    </li>
+                    <li>
+                        <span class="lang-en"><b>Geo / search domain depth.</b> PostGIS, multi-source data fusion,
+                        Hangul-jamo similarity, country-aware engine routing — concrete proof of geo and search
+                        engineering beyond standard CRUD.</span>
+                        <span class="lang-kr"><b>지리정보 · 검색 도메인 깊이.</b> PostGIS · 다중 소스 데이터 융합 ·
+                        한글 자모 similarity · 국가 인지형 엔진 라우팅 — 표준 CRUD를 넘어선 지리정보 · 검색
+                        엔지니어링의 구체적 증명입니다.</span>
+                    </li>
+                </ul>
+            </div>
+
         </div>
     </article>
 
