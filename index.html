@@ -313,32 +313,38 @@
             <div class="project-content">
                 <p class="project-abstract">
                     <span class="lang-en">
-                        Lowering the frame rate of coronary angiography (e.g., from 15 to 7.5 FPS) significantly reduces
-                        radiation exposure but degrades temporal resolution. We introduce Angio-FILM, a novel generative AI
-                        model for video frame interpolation (VFI) dedicated to coronary angiography. Angio-FILM uses a
-                        latent flow matching model to synthesize high-temporal-resolution (15 FPS) videos from
-                        low-frame-rate (7.5 FPS) inputs. The model was trained on 377,000 videos and validated on both
-                        internal and external datasets.
+                        Radiation exposure is inherent to coronary angiography. Lowering its frame rate significantly
+                        reduces radiation exposure but degrades temporal resolution. We introduce Angio-FILM, a novel
+                        generative AI model for video frame interpolation dedicated to coronary angiography. Angio-FILM uses
+                        a latent flow matching model to synthesize high-temporal-resolution (15 FPS) videos from
+                        low-frame-rate (7.5 FPS) inputs. The model was trained on 357,933 videos and validated on both
+                        internal and external open-source datasets.
                     </span>
                     <span class="lang-kr">
-                        관상동맥 조영영상의 frame rate를 낮추면 (예를 들어 15 FPS에서 7.5 FPS로) 방사선 노출량이 크게 줄어드는 대신
-                        temporal resolution이 함께 저하됩니다. 본 연구에서는 관상동맥 조영영상에 특화된 새로운 generative AI 기반
-                        video frame interpolation (VFI) 모델인 Angio-FILM을 제안합니다. Angio-FILM은 latent flow matching model을
-                        활용하여 low-frame-rate (7.5 FPS) 입력으로부터 high-temporal-resolution (15 FPS) 영상을 합성합니다. 본 모델은
-                        377,000건의 영상으로 학습되었으며, 내부 및 외부 dataset 모두에서 검증되었습니다.
+                        관상동맥 조영술에는 방사선 피폭이 수반됩니다. Frame rate를 낮추면 방사선 피폭을 크게 줄일 수 있지만 temporal resolution이 저하됩니다. 본 연구에서는
+                        관상동맥 조영술의 비디오 프레임 보간에 특화된 새로운 생성형 AI 모델인 Angio-FILM을 소개합니다. Angio-FILM은 latent flow matching 모델을
+                        사용하여 낮은 frame rate(7.5 FPS)의 입력으로부터 높은 temporal resolution(15 FPS)의 동영상을 생성합니다. 모델은 357,933개의 동영상으로
+                        학습되었으며, 내부 데이터셋과 외부 오픈소스 데이터셋에서 검증되었습니다.
                     </span>
                 </p>
                 <p class="project-abstract">
                     <span class="lang-en">
-                        On quantitative metrics and qualitative evaluation, Angio-FILM outperformed state-of-the-art VFI
-                        methods. Furthermore, Visual Turing test involving 30 physicians and 600 videos showed accuracies of
-                        54% in a single-video binary classification task, indicating that the generated videos were hardly
-                        distinguishable from real ones.
+                        While quantitative metrics showed mixed results, qualitative evaluation by human experts showed
+                        Angio-FILM outperformed existing state-of-the-art methods. Furthermore, Visual Turing test (30
+                        physicians, 600 videos) showed accuracies of 54% (<em>p</em> = 0.107) in a single-video binary
+                        classification task and 49% (<em>p</em> = 0.749) in a two-alternative forced choice task, indicating
+                        that the generated videos were hardly distinguishable from real angiograms. Quantitative coronary
+                        analysis confirmed high anatomical fidelity, showing minimal deviation in minimal lumen diameter
+                        measurements between the original and interpolated frames (MAE, 0.180 mm). Angio-FILM represents a
+                        significant step forward in translating a cutting-edge generative AI technology into a clinically
+                        helpful tool.
                     </span>
                     <span class="lang-kr">
-                        정량적 지표와 정성적 평가 모두에서 Angio-FILM은 state-of-the-art VFI 방법들을 능가했습니다. 또한 30명의 임상의와
-                        600건의 영상을 대상으로 진행한 Visual Turing test에서 single-video binary classification task의 정확도가 54%로
-                        나타나, 생성된 영상이 실제 영상과 거의 구분되지 않음을 확인했습니다.
+                        정량적 지표에서는 결과가 엇갈렸지만, 전문가의 정성적 평가에서는 Angio-FILM이 기존 최신 기법들보다 우수한 성능을 보였습니다. 또한 의사 30명이 동영상 600개를 평가한
+                        Visual Turing test에서 단일 동영상 이진 분류 과제의 정확도는 54%(<em>p</em> = 0.107), 2지선다 강제 선택 과제의 정확도는
+                        49%(<em>p</em> = 0.749)로 나타나, 생성된 동영상을 실제 관상동맥 조영 영상과 구분하기 어려웠음을 보여주었습니다. 정량적 관상동맥 분석에서는 원본 프레임과 보간된
+                        프레임 간 최소 내강 직경 측정값의 차이가 작아(MAE, 0.180 mm), 높은 해부학적 충실도가 확인되었습니다. Angio-FILM은 최첨단 생성형 AI 기술을 임상적으로
+                        유용한 도구로 구현하는 데 중요한 진전을 이루었습니다.
                     </span>
                 </p>
             </div>
