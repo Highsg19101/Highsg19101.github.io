@@ -13,10 +13,10 @@
 
 <!-- Add specific styling and required scripts -->
 <link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261117-mobile-profile">
-<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-replies">
+<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-wave">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="./assets/js/portfolio-chat-config.js?v=20261117-minimal-input" defer></script>
-<script src="./assets/js/portfolio-chat.js?v=20261117-replies" defer></script>
+<script src="./assets/js/portfolio-chat.js?v=20261117-wave" defer></script>
 <!-- Using MathJax for equations -->
 <script nomodule src="./assets/js/vendor/es6-legacy.min.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -129,7 +129,12 @@
             <div id="portfolio-chat-exchange" class="portfolio-chat-exchange" hidden>
                 <p id="portfolio-chat-question" class="portfolio-chat-question" aria-label="Your question"></p>
                 <div id="portfolio-chat-reply" class="portfolio-chat-reply" role="region" aria-label="Answer" aria-live="polite" aria-atomic="true" hidden></div>
-                <p id="portfolio-chat-reply-status" class="portfolio-chat-feedback" role="status" aria-live="polite" hidden></p>
+                <p id="portfolio-chat-reply-status" class="portfolio-chat-feedback portfolio-chat-status" role="status" aria-live="polite" aria-atomic="true" hidden>
+                    <svg class="portfolio-chat-wave" width="24" height="16" viewBox="0 0 24 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true" focusable="false">
+                        <path d="M3 7v2"/><path d="M7.5 5v6"/><path d="M12 2.5v11"/><path d="M16.5 4.5v7"/><path d="M21 6.5v3"/>
+                    </svg>
+                    <span id="portfolio-chat-status-label"></span>
+                </p>
                 <button id="portfolio-chat-retry" class="portfolio-chat-retry" type="button" hidden>Check for an answer</button>
             </div>
         </div>

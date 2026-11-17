@@ -9,6 +9,7 @@
     const question = document.getElementById('portfolio-chat-question');
     const reply = document.getElementById('portfolio-chat-reply');
     const replyStatus = document.getElementById('portfolio-chat-reply-status');
+    const statusLabel = document.getElementById('portfolio-chat-status-label') || replyStatus;
     const retry = document.getElementById('portfolio-chat-retry');
     const storageKey = 'portfolio-chat-reply-v1';
     const uuidPattern = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -92,7 +93,9 @@
 
     function showReplyStatus(key) {
         replyKey = key;
-        replyStatus.textContent = key ? copy[language][key] : '';
+        const label = key ? copy[language][key] : '';
+        if (statusLabel.textContent !== label) statusLabel.textContent = label;
+        replyStatus.toggleAttribute('data-thinking', key === 'pending' || key === 'running');
         replyStatus.hidden = !key;
         retry.hidden = !['paused', 'disconnected'].includes(key);
         reply.setAttribute('aria-busy', String(['pending', 'running', 'reconnecting'].includes(key)));

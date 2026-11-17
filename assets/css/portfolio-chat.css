@@ -111,6 +111,39 @@ body.light-mode .portfolio-chat-feedback[data-kind="error"] { color: #b4232f; }
     overflow-wrap: anywhere;
 }
 .portfolio-chat-reply a { color: var(--accent-color); text-decoration: underline; text-underline-offset: 3px; }
+
+.portfolio-chat-wave { display: none; }
+.portfolio-chat-status[data-thinking] {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    max-width: 100%;
+    margin: 0;
+    padding: 7px 12px;
+    border-radius: 14px 14px 14px 4px;
+    background: var(--bg-color);
+    line-height: 1.5;
+}
+.portfolio-chat-status[data-thinking] .portfolio-chat-wave {
+    display: block;
+    flex: none;
+    color: var(--accent-color);
+}
+@media (prefers-reduced-motion: no-preference) {
+    [data-thinking] .portfolio-chat-wave path {
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: portfolio-chat-wave 1.4s ease-in-out infinite;
+    }
+    .portfolio-chat-wave path:nth-child(2) { animation-delay: 110ms; }
+    .portfolio-chat-wave path:nth-child(3) { animation-delay: 220ms; }
+    .portfolio-chat-wave path:nth-child(4) { animation-delay: 330ms; }
+    .portfolio-chat-wave path:nth-child(5) { animation-delay: 440ms; }
+}
+@keyframes portfolio-chat-wave {
+    0%, 65%, 100% { transform: scaleY(.52); opacity: .62; }
+    30% { transform: scaleY(1); opacity: 1; }
+}
 .portfolio-chat-retry {
     margin-top: 10px;
     padding: 7px 12px;
