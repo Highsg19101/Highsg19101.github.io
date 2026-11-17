@@ -21,6 +21,7 @@
 .portfolio-chat-form { margin-top: 22px; }
 
 .portfolio-chat-composer {
+    display: grid;
     position: relative;
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
@@ -34,9 +35,10 @@
 }
 
 .portfolio-chat textarea {
+    grid-area: 1 / 1;
     display: block;
     width: 100%;
-    height: 56px;
+    height: 100%;
     min-height: 56px;
     max-height: 360px;
     padding: 14px 64px 14px 16px;
@@ -50,6 +52,32 @@
     line-height: 1.65;
     overflow-wrap: anywhere;
 }
+
+.portfolio-chat-example {
+    grid-area: 1 / 1;
+    place-self: start;
+    position: relative;
+    margin: 14px 64px 14px 16px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--text-secondary);
+    font: inherit;
+    line-height: 1.65;
+    text-align: start;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+.portfolio-chat-example:disabled { visibility: hidden; }
+.portfolio-chat-example:hover { color: var(--text-primary); }
+.portfolio-chat-example:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+@media (prefers-reduced-motion: no-preference) {
+    .portfolio-chat-example.in-view .example-letter {
+        animation: portfolio-chat-type 75ms ease-out backwards;
+        animation-delay: var(--letter-delay);
+    }
+}
+@keyframes portfolio-chat-type { from { opacity: 0; } to { opacity: 1; } }
 
 .portfolio-chat-submit {
     position: absolute;

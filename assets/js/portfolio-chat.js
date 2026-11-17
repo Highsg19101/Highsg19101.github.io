@@ -3,6 +3,7 @@
     const form = document.getElementById('portfolio-chat-form');
     if (!form) return;
     const input = document.getElementById('portfolio-chat-input');
+    const example = document.getElementById('portfolio-chat-example');
     const submit = document.getElementById('portfolio-chat-submit');
     const feedback = document.getElementById('portfolio-chat-feedback');
     const exchange = document.getElementById('portfolio-chat-exchange');
@@ -32,6 +33,8 @@
     const copy = {
         en: {
             label: 'Message', send: 'Send message', sending: 'Sending message',
+            example: 'What did your master’s thesis contribute to the field?',
+            examplePrefix: 'Try: ', useExample: 'Use example question',
             empty: 'Please enter a message.', tooLong: 'Please keep your message within 2,000 characters.',
             received: 'Message sent.', rejected: 'Please check your message and try again.',
             unavailable: 'Unable to confirm delivery. Your message is still here; please try again.',
@@ -48,6 +51,8 @@
         },
         ko: {
             label: '메시지', send: '메시지 보내기', sending: '메시지 보내는 중',
+            example: '이 사람의 졸업 논문으로 정리한 연구들은 어떤 학술적 기여가 있어?',
+            examplePrefix: '예시) ', useExample: '예시 질문 입력',
             empty: '메시지를 입력해 주세요.', tooLong: '2,000자 이내로 입력해 주세요.',
             received: '메시지를 보냈습니다.', rejected: '입력 내용을 확인하고 다시 시도해 주세요.',
             unavailable: '전송을 확인하지 못했습니다. 입력한 내용은 유지됩니다. 다시 시도해 주세요.',
@@ -103,6 +108,21 @@
 
     function localize() {
         language = document.body.classList.contains('lang-kr-mode') ? 'ko' : 'en';
+        if (example && example.lang !== language) {
+            const { example: message, examplePrefix, useExample } = copy[language];
+            const preview = example.firstElementChild;
+            example.lang = language;
+            example.setAttribute('aria-label', useExample + ': ' + message);
+            preview.replaceChildren(examplePrefix);
+            Array.from(message).forEach((character, index) => {
+                const letter = document.createElement('span');
+                letter.className = 'example-letter';
+                letter.style.setProperty('--letter-delay', index * 32 + 'ms');
+                letter.textContent = character;
+                preview.append(letter);
+            });
+            example.hidden = false;
+        }
         input.setAttribute('aria-label', copy[language].label);
         submit.setAttribute('aria-label', copy[language][sending ? 'sending' : 'send']);
         question.setAttribute('aria-label', copy[language].yourQuestion);
@@ -115,6 +135,7 @@
     function updateControls() {
         input.disabled = sending;
         submit.disabled = sending;
+        if (example) example.disabled = sending || input.value !== '';
         form.setAttribute('aria-busy', String(sending));
         submit.setAttribute('aria-label', copy[language][sending ? 'sending' : 'send']);
     }
@@ -306,10 +327,38 @@
         }
     });
     retry.addEventListener('click', () => beginPolling(true));
-    input.addEventListener('input', () => showFeedback(''));
+    function useExample() {
+        if (sending || input.value || composing) return;
+        input.value = copy[language].example;
+        input.dispatchEvent(new Event('input', { bubbles: true }));
+        input.focus({ preventScroll: true });
+        input.setSelectionRange(input.value.length, input.value.length);
+    }
+    if (example) {
+        example.addEventListener('click', useExample);
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, self) => {
+                if (entries.some(entry => entry.isIntersecting)) {
+                    example.classList.add('in-view');
+                    self.disconnect();
+                }
+            });
+            observer.observe(form);
+        }
+    }
+    input.addEventListener('input', () => {
+        if (example) example.disabled = sending || input.value !== '';
+        showFeedback('');
+    });
     input.addEventListener('compositionstart', () => { composing = true; });
     input.addEventListener('compositionend', () => { composing = false; });
     input.addEventListener('keydown', (event) => {
+        if (event.key === 'Tab' && example && !example.disabled && !input.value && !event.shiftKey &&
+            !event.ctrlKey && !event.metaKey && !event.altKey && !event.isComposing && !composing && event.keyCode !== 229) {
+            event.preventDefault();
+            useExample();
+            return;
+        }
         if (event.key === 'Enter' && (event.ctrlKey || event.metaKey) && !event.isComposing && !composing && event.keyCode !== 229) {
             event.preventDefault();
             form.requestSubmit();

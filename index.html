@@ -13,10 +13,10 @@
 
 <!-- Add specific styling and required scripts -->
 <link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261117-mobile-profile">
-<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-wave">
+<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-example">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="./assets/js/portfolio-chat-config.js?v=20261117-minimal-input" defer></script>
-<script src="./assets/js/portfolio-chat.js?v=20261117-wave" defer></script>
+<script src="./assets/js/portfolio-chat.js?v=20261117-example" defer></script>
 <!-- Using MathJax for equations -->
 <script nomodule src="./assets/js/vendor/es6-legacy.min.js"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -113,13 +113,16 @@
     <section class="portfolio-chat" id="contact" aria-labelledby="portfolio-chat-title">
         <div class="portfolio-chat-card">
             <h2 id="portfolio-chat-title">
-                <span class="lang-en">Ask me anything about my research and projects.</span>
-                <span class="lang-kr">제 연구와 프로젝트에 대해 무엇이든 물어보세요.</span>
+                <span class="lang-en">Curious about my work? Ask away.</span>
+                <span class="lang-kr">제 연구가 궁금하신가요? 편하게 물어보세요.</span>
             </h2>
             <form class="portfolio-chat-form" id="portfolio-chat-form" novalidate>
                 <div class="portfolio-chat-composer">
                     <textarea id="portfolio-chat-input" name="message" rows="1" maxlength="2000" required
                         aria-label="Message" aria-describedby="portfolio-chat-feedback"></textarea>
+                    <button class="portfolio-chat-example" id="portfolio-chat-example" type="button" hidden>
+                        <span aria-hidden="true"></span>
+                    </button>
                     <button class="portfolio-chat-submit" id="portfolio-chat-submit" type="submit" aria-label="Send message" disabled>
                         <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
                     </button>
