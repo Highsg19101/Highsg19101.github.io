@@ -3,10 +3,8 @@
 
 <!-- Add specific styling and required scripts -->
 <link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261112-profile-no-ring">
-<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117">
+<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-title-only">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<script src="./assets/js/portfolio-chat-config.js?v=20261117" defer></script>
-<script src="./assets/js/portfolio-chat.js?v=20261117" defer></script>
 <!-- Using MathJax for equations -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -102,57 +100,10 @@
     <!-- PORTFOLIO MESSAGES -->
     <section class="portfolio-chat" id="contact" aria-labelledby="portfolio-chat-title">
         <div class="portfolio-chat-card">
-            <div class="portfolio-chat-heading">
-                <div class="portfolio-chat-intro">
-                    <span class="portfolio-chat-eyebrow" data-chat-copy="eyebrow">A conversation starts here</span>
-                    <h2 id="portfolio-chat-title" data-chat-copy="title">Let’s talk about my work</h2>
-                </div>
-                <div class="portfolio-chat-connection">
-                    <span class="portfolio-chat-status" id="portfolio-chat-status" data-state="checking" role="status">
-                        <span class="portfolio-chat-status-dot" aria-hidden="true"></span>
-                        <span id="portfolio-chat-status-text">Checking connection</span>
-                    </span>
-                    <button class="portfolio-chat-retry" id="portfolio-chat-retry" type="button" hidden data-chat-copy="reconnect">Check again</button>
-                </div>
-            </div>
-            <p class="portfolio-chat-description" id="portfolio-chat-description" data-chat-copy="description">Messages are delivered to Sang-Kyun’s inbox. Automated replies are not available yet.</p>
-
-            <div class="portfolio-chat-prompts" role="group" aria-label="Message ideas" id="portfolio-chat-prompts">
-                <button type="button" class="portfolio-chat-prompt" data-chat-prompt="research" data-chat-copy="research">Research &amp; publications <span aria-hidden="true">↗</span></button>
-                <button type="button" class="portfolio-chat-prompt" data-chat-prompt="projects" data-chat-copy="projects">A project question <span aria-hidden="true">↗</span></button>
-                <button type="button" class="portfolio-chat-prompt" data-chat-prompt="collaboration" data-chat-copy="collaboration">Explore a collaboration <span aria-hidden="true">↗</span></button>
-            </div>
-
-            <div class="portfolio-chat-history" id="portfolio-chat-history" hidden>
-                <h3 data-chat-copy="history">Sent during this visit</h3>
-                <div class="portfolio-chat-messages" id="portfolio-chat-messages" role="log" aria-live="polite" aria-relevant="additions" aria-label="Sent messages"></div>
-            </div>
-
-            <form class="portfolio-chat-form" id="portfolio-chat-form" aria-describedby="portfolio-chat-description" novalidate>
-                <div class="portfolio-chat-input-heading">
-                    <label for="portfolio-chat-input" data-chat-copy="label">Your message</label>
-                    <span class="portfolio-chat-counter" id="portfolio-chat-counter" aria-hidden="true">0 / 2,000</span>
-                </div>
-                <div class="portfolio-chat-composer">
-                    <textarea id="portfolio-chat-input" name="message" rows="4" maxlength="2000" required
-                        placeholder="What would you like to know about my research or projects?"
-                        aria-describedby="portfolio-chat-limit portfolio-chat-error" disabled></textarea>
-                    <div class="portfolio-chat-composer-footer">
-                        <span class="portfolio-chat-shortcut" data-chat-copy="shortcut">Ctrl / ⌘ + Enter to send</span>
-                        <button class="portfolio-chat-submit" id="portfolio-chat-submit" type="submit" disabled>
-                            <span id="portfolio-chat-submit-text" data-chat-copy="send">Send message</span>
-                            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                        </button>
-                    </div>
-                </div>
-                <span class="portfolio-chat-sr-only" id="portfolio-chat-limit" data-chat-copy="limit">Maximum 2,000 characters. Enter adds a new line.</span>
-                <p class="portfolio-chat-error" id="portfolio-chat-error" role="alert" hidden></p>
-                <div class="portfolio-chat-note">
-                    <span data-chat-copy="note">Messages are stored on Sang-Kyun’s Mac mini for up to 30 days.</span>
-                    <a href="mailto:highsg19101@gmail.com" data-chat-copy="email">Prefer email?</a>
-                </div>
-            </form>
-            <noscript><p class="portfolio-chat-noscript">Enable JavaScript to send a message, or <a href="mailto:highsg19101@gmail.com">contact me by email</a>. / 메시지를 보내려면 JavaScript를 켜거나 <a href="mailto:highsg19101@gmail.com">이메일로 연락해 주세요</a>.</p></noscript>
+            <h2 id="portfolio-chat-title">
+                <span class="lang-en">Let’s talk about my work</span>
+                <span class="lang-kr">제 연구와 프로젝트에 대해 이야기해요</span>
+            </h2>
         </div>
     </section>
 
