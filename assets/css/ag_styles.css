@@ -226,6 +226,66 @@ a:hover {
     color: var(--accent-color);
 }
 
+@media (max-width: 767px) {
+    .hero {
+        display: grid;
+        grid-template-columns: clamp(84px, 24vw, 140px) minmax(0, 1fr);
+        align-items: start;
+        gap: 12px;
+        text-align: left;
+    }
+
+    .hero-img-container {
+        width: 100%;
+        height: auto;
+        margin-bottom: 0;
+        border-radius: var(--radius-md);
+    }
+
+    .hero-img {
+        height: auto;
+        border-radius: var(--radius-md);
+    }
+
+    .hero-content h1 {
+        font-size: clamp(1.4rem, 4.8vw, 1.9rem);
+        line-height: 1.2;
+        margin-bottom: 6px;
+    }
+
+    .hero-content h2 {
+        font-size: 0.875rem;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .hero-links {
+        justify-content: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+    }
+
+    .hero-link {
+        max-width: 100%;
+        min-width: 0;
+        min-height: 36px;
+        padding: 6px 8px;
+        font-size: 0.78rem;
+        overflow-wrap: anywhere;
+    }
+
+    .hero-link i {
+        flex-shrink: 0;
+        margin-right: 5px;
+    }
+
+    .hero-meta {
+        font-size: 0.8125rem;
+        line-height: 1.65;
+        overflow-wrap: anywhere;
+    }
+}
+
 /* Sections */
 section {
     padding: 60px 0;
