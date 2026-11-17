@@ -13,10 +13,10 @@
 
 <!-- Add specific styling and required scripts -->
 <link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261112-profile-no-ring">
-<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-compact-heading">
+<link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261117-replies">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="./assets/js/portfolio-chat-config.js?v=20261117-minimal-input" defer></script>
-<script src="./assets/js/portfolio-chat.js?v=20261117-minimal-input" defer></script>
+<script src="./assets/js/portfolio-chat.js?v=20261117-replies" defer></script>
 <!-- Using MathJax for equations -->
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -126,6 +126,12 @@
                 </div>
                 <p id="portfolio-chat-feedback" class="portfolio-chat-feedback" role="status" aria-live="polite" hidden></p>
             </form>
+            <div id="portfolio-chat-exchange" class="portfolio-chat-exchange" hidden>
+                <p id="portfolio-chat-question" class="portfolio-chat-question" aria-label="Your question"></p>
+                <div id="portfolio-chat-reply" class="portfolio-chat-reply" role="region" aria-label="Answer" aria-live="polite" aria-atomic="true" hidden></div>
+                <p id="portfolio-chat-reply-status" class="portfolio-chat-feedback" role="status" aria-live="polite" hidden></p>
+                <button id="portfolio-chat-retry" class="portfolio-chat-retry" type="button" hidden>Check for an answer</button>
+            </div>
         </div>
     </section>
 
