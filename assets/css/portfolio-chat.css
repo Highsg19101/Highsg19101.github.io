@@ -18,8 +18,82 @@
     line-height: 1.35;
 }
 
+.portfolio-chat-form { margin-top: 22px; }
+
+.portfolio-chat-composer {
+    position: relative;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: var(--bg-color);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.portfolio-chat-composer:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color) 15%, transparent);
+}
+
+.portfolio-chat textarea {
+    display: block;
+    width: 100%;
+    min-height: 148px;
+    max-height: 360px;
+    padding: 15px 16px 64px;
+    border: 0;
+    border-radius: inherit;
+    outline: none;
+    resize: vertical;
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+}
+
+.portfolio-chat-submit {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.portfolio-chat-submit svg { width: 20px; height: 20px; }
+.portfolio-chat-submit:hover:not(:disabled) { background: var(--accent-hover); }
+.portfolio-chat-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+.portfolio-chat-submit:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
+.portfolio-chat-form[aria-busy="true"] .portfolio-chat-submit svg { visibility: hidden; }
+.portfolio-chat-form[aria-busy="true"] .portfolio-chat-submit::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: portfolio-chat-spin 0.8s linear infinite;
+}
+
+.portfolio-chat-feedback { margin-top: 10px; color: var(--text-secondary); font-size: 0.8rem; }
+.portfolio-chat-feedback[data-kind="error"] { color: #ff9a9a; }
+body.light-mode .portfolio-chat-feedback[data-kind="error"] { color: #b4232f; }
+.portfolio-chat [hidden] { display: none !important; }
+@keyframes portfolio-chat-spin { to { transform: rotate(360deg); } }
+
 @media (max-width: 600px) {
     .portfolio-chat { padding-top: 28px; }
     .portfolio-chat-card { padding: 20px 16px; }
     .portfolio-chat h2 { font-size: 1.3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-chat-composer { transition: none; }
+    .portfolio-chat-submit::after { animation: none !important; }
 }
