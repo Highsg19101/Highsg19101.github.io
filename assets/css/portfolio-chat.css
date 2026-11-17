@@ -36,9 +36,10 @@
 .portfolio-chat textarea {
     display: block;
     width: 100%;
-    min-height: 148px;
+    height: 56px;
+    min-height: 56px;
     max-height: 360px;
-    padding: 15px 16px 64px;
+    padding: 14px 64px 14px 16px;
     border: 0;
     border-radius: inherit;
     outline: none;
@@ -53,7 +54,7 @@
 .portfolio-chat-submit {
     position: absolute;
     right: 12px;
-    bottom: 12px;
+    bottom: 8px;
     display: grid;
     place-items: center;
     width: 40px;
