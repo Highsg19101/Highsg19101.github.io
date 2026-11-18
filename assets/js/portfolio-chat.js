@@ -3,6 +3,7 @@
     const form = document.getElementById('portfolio-chat-form');
     if (!form) return;
     const input = document.getElementById('portfolio-chat-input');
+    const focusInput = document.getElementById('portfolio-chat-focus');
     const example = document.getElementById('portfolio-chat-example');
     const submit = document.getElementById('portfolio-chat-submit');
     const feedback = document.getElementById('portfolio-chat-feedback');
@@ -327,6 +328,9 @@
         }
     });
     retry.addEventListener('click', () => beginPolling(true));
+    if (focusInput) focusInput.addEventListener('click', () => {
+        if (!sending) input.focus();
+    });
     function useExample() {
         if (sending || input.value || composing) return;
         input.value = copy[language].example;
@@ -359,9 +363,9 @@
             useExample();
             return;
         }
-        if (event.key === 'Enter' && (event.ctrlKey || event.metaKey) && !event.isComposing && !composing && event.keyCode !== 229) {
+        if (event.key === 'Enter' && !event.shiftKey && !event.altKey && !event.isComposing && !composing && event.keyCode !== 229) {
             event.preventDefault();
-            form.requestSubmit();
+            if (!event.repeat) form.requestSubmit();
         }
     });
     try {

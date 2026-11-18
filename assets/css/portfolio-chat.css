@@ -20,6 +20,18 @@
 
 .portfolio-chat-form { margin-top: 22px; }
 
+.portfolio-chat-focus {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    letter-spacing: inherit;
+    text-align: start;
+    cursor: pointer;
+}
+.portfolio-chat-focus:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 4px; }
+
 .portfolio-chat-composer {
     display: grid;
     position: relative;
