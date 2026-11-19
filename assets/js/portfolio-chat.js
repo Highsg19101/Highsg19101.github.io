@@ -31,10 +31,20 @@
     let pollGeneration = 0;
     let pollStarted = 0;
     let pollErrors = 0;
+    let exampleIndex = 0;
+    let exampleTimer = null;
+    let exampleDuration = 0;
+    let exampleInView = !('IntersectionObserver' in window);
+    const reducedMotion = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
     const copy = {
         en: {
             label: 'Message', send: 'Send message', sending: 'Sending message',
-            example: 'What did your master’s thesis contribute to the field?',
+            examples: [
+                'What connects your past research to your current work?',
+                'How could your research help doctors and patients?',
+                'What’s the idea behind Data Reconstruction Method for Learning to Censored Survival Data?',
+                'What did your master’s thesis contribute to the field?'
+            ],
             examplePrefix: 'Try: ', useExample: 'Use example question',
             empty: 'Please enter a message.', tooLong: 'Please keep your message within 2,000 characters.',
             received: 'Message sent.', rejected: 'Please check your message and try again.',
@@ -52,7 +62,12 @@
         },
         ko: {
             label: '메시지', send: '메시지 보내기', sending: '메시지 보내는 중',
-            example: '이 사람의 석사 졸업 논문에 있는 연구들은 어떤 학술적 기여가 있어?',
+            examples: [
+                '과거 연구와 현재 하고 있는 일은 어떻게 연결되나요?',
+                '고상균의 최근 연구는 의사와 환자에게 어떤 도움을 줄 수 있나요?',
+                '검열된 생존 데이터 학습을 위한 데이터 재구성 연구는 어떤 아이디어에서 출발했나요?',
+                '석사 학위논문의 핵심 학술적 기여는 무엇인가요?'
+            ],
             examplePrefix: '예시) ', useExample: '예시 질문 입력',
             empty: '메시지를 입력해 주세요.', tooLong: '2,000자 이내로 입력해 주세요.',
             received: '메시지를 보냈습니다.', rejected: '입력 내용을 확인하고 다시 시도해 주세요.',
@@ -107,22 +122,65 @@
         reply.setAttribute('aria-busy', String(['pending', 'running', 'reconnecting'].includes(key)));
     }
 
+    function renderExample() {
+        window.clearTimeout(exampleTimer);
+        exampleTimer = null;
+        example.classList.remove('is-typing');
+        const { examples, examplePrefix, useExample } = copy[language];
+        const message = examples[exampleIndex];
+        const characters = Array.from(message);
+        const clearAfter = (characters.length - 1) * 32 + 75 + 2400;
+        exampleDuration = Math.max(6000, clearAfter + (characters.length - 1) * 20 + 75 + 400);
+        const preview = example.firstElementChild;
+        let sizer = example.querySelector('.portfolio-chat-example-size');
+        if (!sizer) {
+            sizer = document.createElement('span');
+            sizer.className = 'portfolio-chat-example-size';
+            sizer.setAttribute('aria-hidden', 'true');
+            example.append(sizer);
+        }
+        // Reserve space for the longest hint so rotating text cannot move the composer.
+        sizer.textContent = examplePrefix + examples.reduce((longest, text) => text.length > longest.length ? text : longest, '');
+        example.lang = language;
+        example.setAttribute('aria-label', useExample + ': ' + message);
+        preview.replaceChildren(examplePrefix);
+        characters.forEach((character, index) => {
+            const letter = document.createElement('span');
+            letter.className = 'example-letter';
+            letter.style.setProperty('--letter-delay', index * 32 + 'ms');
+            letter.style.setProperty('--letter-erase-delay', clearAfter + (characters.length - 1 - index) * 20 + 'ms');
+            letter.textContent = character;
+            preview.append(letter);
+        });
+        example.hidden = false;
+    }
+
+    function updateExample() {
+        if (!example) return;
+        example.disabled = sending || input.value !== '' || composing;
+        const animate = !example.hidden && !example.disabled && exampleInView && !document.hidden &&
+            !reducedMotion?.matches && document.activeElement !== example;
+        if (!animate) {
+            window.clearTimeout(exampleTimer);
+            exampleTimer = null;
+            example.classList.remove('is-typing');
+            return;
+        }
+        if (exampleTimer !== null) return;
+        example.classList.add('is-typing');
+        exampleTimer = window.setTimeout(() => {
+            exampleTimer = null;
+            exampleIndex = (exampleIndex + 1) % copy[language].examples.length;
+            renderExample();
+            updateExample();
+        }, exampleDuration);
+    }
+
     function localize() {
         language = document.body.classList.contains('lang-kr-mode') ? 'ko' : 'en';
         if (example && example.lang !== language) {
-            const { example: message, examplePrefix, useExample } = copy[language];
-            const preview = example.firstElementChild;
-            example.lang = language;
-            example.setAttribute('aria-label', useExample + ': ' + message);
-            preview.replaceChildren(examplePrefix);
-            Array.from(message).forEach((character, index) => {
-                const letter = document.createElement('span');
-                letter.className = 'example-letter';
-                letter.style.setProperty('--letter-delay', index * 32 + 'ms');
-                letter.textContent = character;
-                preview.append(letter);
-            });
-            example.hidden = false;
+            renderExample();
+            updateExample();
         }
         input.setAttribute('aria-label', copy[language].label);
         submit.setAttribute('aria-label', copy[language][sending ? 'sending' : 'send']);
@@ -136,7 +194,7 @@
     function updateControls() {
         input.disabled = sending;
         submit.disabled = sending;
-        if (example) example.disabled = sending || input.value !== '';
+        updateExample();
         form.setAttribute('aria-busy', String(sending));
         submit.setAttribute('aria-label', copy[language][sending ? 'sending' : 'send']);
     }
@@ -333,29 +391,31 @@
     });
     function useExample() {
         if (sending || input.value || composing) return;
-        input.value = copy[language].example;
+        input.value = copy[language].examples[exampleIndex];
         input.dispatchEvent(new Event('input', { bubbles: true }));
         input.focus({ preventScroll: true });
         input.setSelectionRange(input.value.length, input.value.length);
     }
     if (example) {
         example.addEventListener('click', useExample);
+        example.addEventListener('focus', updateExample);
+        example.addEventListener('blur', updateExample);
         if ('IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, self) => {
-                if (entries.some(entry => entry.isIntersecting)) {
-                    example.classList.add('in-view');
-                    self.disconnect();
-                }
+            const observer = new IntersectionObserver((entries) => {
+                exampleInView = entries.some(entry => entry.isIntersecting);
+                updateExample();
             });
             observer.observe(form);
         }
     }
+    document.addEventListener('visibilitychange', updateExample);
+    reducedMotion?.addEventListener?.('change', updateExample);
     input.addEventListener('input', () => {
-        if (example) example.disabled = sending || input.value !== '';
+        updateExample();
         showFeedback('');
     });
-    input.addEventListener('compositionstart', () => { composing = true; });
-    input.addEventListener('compositionend', () => { composing = false; });
+    input.addEventListener('compositionstart', () => { composing = true; updateExample(); });
+    input.addEventListener('compositionend', () => { composing = false; updateExample(); });
     input.addEventListener('keydown', (event) => {
         if (event.key === 'Tab' && example && !example.disabled && !input.value && !event.shiftKey &&
             !event.ctrlKey && !event.metaKey && !event.altKey && !event.isComposing && !composing && event.keyCode !== 229) {
