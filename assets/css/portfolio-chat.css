@@ -84,12 +84,15 @@
 .portfolio-chat-example:hover { color: var(--text-primary); }
 .portfolio-chat-example:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
 @media (prefers-reduced-motion: no-preference) {
-    .portfolio-chat-example.in-view .example-letter {
-        animation: portfolio-chat-type 75ms ease-out backwards;
+    .portfolio-chat-example.in-view:not(:disabled) .example-letter {
+        animation: portfolio-chat-type 6s ease-out infinite backwards;
         animation-delay: var(--letter-delay);
     }
 }
-@keyframes portfolio-chat-type { from { opacity: 0; } to { opacity: 1; } }
+@keyframes portfolio-chat-type {
+    0%, 66.25%, 100% { opacity: 0; }
+    1.25%, 65% { opacity: 1; }
+}
 
 .portfolio-chat-submit {
     position: absolute;
