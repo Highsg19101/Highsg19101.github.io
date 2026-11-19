@@ -487,6 +487,36 @@ section {
     color: var(--accent-color);
 }
 
+.project-meta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 12px;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 6px 12px;
+    border: 1px solid var(--accent-color);
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-color);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.project-link:hover {
+    border-color: var(--accent-hover);
+    text-decoration: none;
+}
+
+.project-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
 .project-images {
     display: flex;
     flex-direction: column;
