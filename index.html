@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Add specific styling and required scripts -->
-<link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261119-project-link">
+<link rel="stylesheet" href="./assets/css/ag_styles.css?v=20261120-white-default">
 <link rel="stylesheet" href="./assets/css/portfolio-chat.css?v=20261119-example-rotation">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="./assets/js/portfolio-chat-config.js?v=20261117-minimal-input" defer></script>
@@ -22,11 +22,6 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <body class="light-mode">
-<script>
-    try {
-        document.body.classList.toggle('light-mode', localStorage.getItem('sk-theme') !== 'dark');
-    } catch (e) { }
-</script>
 
 <!-- Floating toggle bar: theme (moon/sun) + language (globe + EN/KR) -->
 <div class="toggle-bar" role="toolbar" aria-label="Site preferences">
@@ -1347,19 +1342,14 @@
 <!-- Theme + language toggle behaviour -->
 <script>
     (function () {
-        var STORAGE_THEME = 'sk-theme';
         var STORAGE_LANG = 'sk-lang';
 
         function applyTheme(theme) {
-            if (theme === 'light') {
-                document.body.classList.add('light-mode');
-            } else {
-                document.body.classList.remove('light-mode');
-            }
+            document.body.classList.toggle('light-mode', theme === 'light');
+            document.body.classList.toggle('dark-mode', theme === 'dark');
             document.querySelectorAll('[data-theme]').forEach(function (btn) {
                 btn.classList.toggle('active', btn.getAttribute('data-theme') === theme);
             });
-            try { localStorage.setItem(STORAGE_THEME, theme); } catch (e) { }
         }
 
         function applyLang(lang) {
@@ -1377,12 +1367,7 @@
         }
 
         function init() {
-            var savedTheme = 'light';
-            try {
-                if (localStorage.getItem(STORAGE_THEME) === 'dark') savedTheme = 'dark';
-            } catch (e) { }
-
-            applyTheme(savedTheme);
+            applyTheme('light');
             applyLang('en');
 
             document.querySelectorAll('[data-theme]').forEach(function (btn) {
